@@ -1,7 +1,6 @@
-# Статичний сайт MAYAG (Cloudflare Workers Assets / Pages-compatible)
 name = "mayag-site"
 compatibility_date = "2026-08-10"
 
 [assets]
 directory = "./"
-not_found_handling = "404-page"
+binding = "ASSETS"

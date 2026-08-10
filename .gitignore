@@ -18,6 +18,10 @@ mayag-fit-upload.zip
 photo_*.jpg
 photo_*.png
 
+# Node
+node_modules/
+package-lock.json
+
 # Env (на майбутнє, якщо з’являться ключі)
 .env
 .env.*

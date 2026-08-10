@@ -1,0 +1,19 @@
+# Local / OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Packaging leftovers (не для хостингу)
+_deploy/
+*.zip
+mayag-fit-upload.zip
+
+# Env (на майбутнє, якщо з’являться ключі)
+.env
+.env.*

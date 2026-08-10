@@ -14,6 +14,10 @@ _deploy/
 *.zip
 mayag-fit-upload.zip
 
+# Старі / тимчасові медіа (не на сайт)
+photo_*.jpg
+photo_*.png
+
 # Env (на майбутнє, якщо з’являться ключі)
 .env
 .env.*

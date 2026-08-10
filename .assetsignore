@@ -1,0 +1,10 @@
+.git
+.gitignore
+README.md
+ЯК_ПІДКЛЮЧИТИ_GIT_CLOUDFLARE.md
+*.md
+.DS_Store
+Thumbs.db
+_deploy
+*.zip
+photo_*

@@ -1,6 +1,6 @@
 (function () {
   var cfg = window.MAYAG_CONFIG || {};
-  var telegramUrl = cfg.telegramUrl || 'https://t.me/FitHad_bot';
+  var telegramUrl = cfg.telegramUrl || 'https://t.me/MAYAG_fit_Platform_bot';
   var phoneHref = cfg.phoneHref || 'tel:+380507887041';
   var phoneDisplay = cfg.phoneDisplay || '+380 50 788 70 41';
 

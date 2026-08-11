@@ -19,7 +19,7 @@
 ## Посилання на бота
 
 Єдине місце: `js/config.js` → `telegramUrl`  
-Зараз: `https://t.me/FitHad_bot` (поки не переїхали на новий бот).
+Зараз: `https://t.me/MAYAG_fit_Platform_bot`
 
 ## Структура
 

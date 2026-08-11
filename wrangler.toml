@@ -1,6 +1,3 @@
 name = "mayag-site"
 compatibility_date = "2026-08-10"
-
-[assets]
-directory = "./"
-binding = "ASSETS"
+pages_build_output_dir = "."

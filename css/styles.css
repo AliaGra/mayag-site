@@ -376,6 +376,11 @@ ul {
   padding-right: 0;
 }
 
+.feature-card--soon .feature-card__badge,
+.feature-card--soon .feature-card__star {
+  color: #e30613;
+}
+
 .feature-card__badge {
   display: inline-flex;
   align-items: center;
@@ -387,7 +392,7 @@ ul {
   font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: lowercase;
-  color: var(--red);
+  color: #e30613;
   white-space: nowrap;
   line-height: 1;
 }
@@ -398,6 +403,7 @@ ul {
   margin-left: 0.12em;
   position: relative;
   top: -0.45em;
+  color: #e30613;
 }
 
 .feature-card h3 {

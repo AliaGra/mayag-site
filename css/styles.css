@@ -368,23 +368,35 @@ ul {
   padding: 1.15rem 1.2rem;
 }
 
-.feature-card--soon {
-  padding-top: 1.7rem;
-  padding-right: 1.15rem;
+.feature-card--soon h3 {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.45rem;
+  padding-right: 0;
 }
 
 .feature-card__badge {
-  position: absolute;
-  top: 0.55rem;
-  right: 0.65rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-top: 0.12rem;
+  transform: translateY(-0.28em);
   font-family: var(--font-display);
-  font-size: 0.68rem;
+  font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: lowercase;
   color: var(--red);
   white-space: nowrap;
   line-height: 1;
+}
+
+.feature-card__star {
+  width: 0.62em;
+  height: 0.62em;
+  fill: currentColor;
+  flex-shrink: 0;
 }
 
 .feature-card h3 {
@@ -431,10 +443,6 @@ ul {
 
 .feature-callout .feature-card p {
   color: rgba(255, 255, 255, 0.78);
-}
-
-.feature-card--soon h3 {
-  padding-right: 6.5rem;
 }
 
 /* CTA */

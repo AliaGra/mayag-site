@@ -677,11 +677,18 @@ ul {
 .contacts-card__value {
   display: inline-block;
   margin-top: 0.85rem;
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 800;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   color: var(--black);
   word-break: break-word;
+}
+
+.contacts-card a[data-phone].contacts-card__value {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+  font-weight: 800;
 }
 
 .contacts-card__value:hover {

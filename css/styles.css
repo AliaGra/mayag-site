@@ -14,7 +14,7 @@
   --radius-sm: 12px;
   --content: 1080px;
   --narrow: 680px;
-  --header-h: 72px;
+  --header-h: 84px;
   --font-display: "Syne", system-ui, sans-serif;
   --font-body: "Manrope", system-ui, sans-serif;
   --focus: 0 0 0 3px rgba(227, 6, 19, 0.35);
@@ -126,6 +126,11 @@ ul {
   flex-shrink: 0;
   border-radius: 8px;
   transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+.brand__logo--full {
+  height: 68px;
+  max-width: min(220px, 42vw);
 }
 
 .visually-hidden {
@@ -791,6 +796,11 @@ ul {
     height: 44px;
   }
 
+  .brand__logo--full {
+    height: 58px;
+    max-width: min(180px, 48vw);
+  }
+
   .header-phone {
     display: none;
   }
@@ -841,5 +851,10 @@ ul {
 @media (max-width: 380px) {
   .brand__logo {
     height: 40px;
+  }
+
+  .brand__logo--full {
+    height: 52px;
+    max-width: min(160px, 52vw);
   }
 }

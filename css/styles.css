@@ -133,6 +133,14 @@ ul {
   max-width: min(220px, 42vw);
 }
 
+.brand__logo--round {
+  height: 58px;
+  width: 58px;
+  max-width: none;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -864,6 +872,11 @@ ul {
     max-width: min(180px, 48vw);
   }
 
+  .brand__logo--round {
+    height: 48px;
+    width: 48px;
+  }
+
   .header-phone {
     display: none;
   }
@@ -919,5 +932,10 @@ ul {
   .brand__logo--full {
     height: 52px;
     max-width: min(160px, 52vw);
+  }
+
+  .brand__logo--round {
+    height: 44px;
+    width: 44px;
   }
 }

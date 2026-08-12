@@ -252,6 +252,15 @@ ul {
   background: var(--red-dark);
 }
 
+.btn--telegram {
+  background: #229ED9;
+  color: var(--white);
+}
+
+.btn--telegram:hover {
+  background: #1b8bc0;
+}
+
 .btn--dark {
   background: var(--black);
   color: var(--white);

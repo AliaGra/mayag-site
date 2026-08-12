@@ -40,6 +40,20 @@ body {
   overflow-x: hidden;
 }
 
+/* Ледь помітна текстура лише на головній */
+.page-home {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(rgba(10, 10, 10, 0.028) 0.7px, transparent 0.8px),
+    radial-gradient(rgba(227, 6, 19, 0.018) 0.6px, transparent 0.7px);
+  background-size: 18px 18px, 28px 28px;
+  background-position: 0 0, 9px 14px;
+}
+
+.page-home .site-header {
+  background: rgba(246, 246, 246, 0.88);
+}
+
 img {
   max-width: 100%;
   height: auto;

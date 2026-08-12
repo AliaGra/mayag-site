@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20260812e">
+  <link rel="stylesheet" href="css/styles.css?v=20260812f">
 </head>
 <body>
   <header class="site-header">
@@ -45,7 +45,11 @@
   <main>
     <div class="page-top">
       <div class="container">
-        <a class="page-back" href="index.html">← На головну</a>
+        <nav class="breadcrumbs" aria-label="Навігаційний шлях">
+          <a href="index.html">Головна</a>
+          <span class="breadcrumbs__sep" aria-hidden="true">→</span>
+          <span class="breadcrumbs__current">Для тих, хто тренується сам</span>
+        </nav>
         <nav class="page-audience-nav" aria-label="Інші розділи">
           <a class="is-active" href="solo.html" aria-current="page">Тренуйся сам</a>
           <a href="with-coach.html">З тренером</a>

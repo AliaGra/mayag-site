@@ -1,6 +1,7 @@
 (function () {
   var cfg = window.MAYAG_CONFIG || {};
   var telegramUrl = cfg.telegramUrl || 'https://t.me/MAYAG_fit_Platform_bot';
+  var helpTelegramUrl = cfg.helpTelegramUrl || 'https://t.me/help_MAYAG_Fit';
   var phoneHref = cfg.phoneHref || 'tel:+380507887041';
   var phoneDisplay = cfg.phoneDisplay || '+380 50 788 70 41';
   var emailHref = cfg.emailHref || 'mailto:help@mayag.fit';
@@ -8,6 +9,12 @@
 
   document.querySelectorAll('[data-telegram]').forEach(function (el) {
     el.setAttribute('href', telegramUrl);
+    el.setAttribute('target', '_blank');
+    el.setAttribute('rel', 'noopener noreferrer');
+  });
+
+  document.querySelectorAll('[data-help-telegram]').forEach(function (el) {
+    el.setAttribute('href', helpTelegramUrl);
     el.setAttribute('target', '_blank');
     el.setAttribute('rel', 'noopener noreferrer');
   });

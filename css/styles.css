@@ -697,6 +697,22 @@ ul {
   color: var(--red);
 }
 
+.contacts-card__hint {
+  margin: 0.65rem 0 0;
+  font-size: 0.88rem;
+}
+
+.contacts-card__hint a {
+  color: var(--muted);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.contacts-card__hint a:hover {
+  color: var(--red);
+}
+
 .contacts-card .btn {
   margin-top: 0.95rem;
 }

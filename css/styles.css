@@ -693,12 +693,6 @@ ul {
   word-break: break-word;
 }
 
-.contacts-card a[data-phone].contacts-card__value {
-  font-family: var(--font-display);
-  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
-  font-weight: 800;
-}
-
 .contacts-card__value:hover {
   color: var(--red);
 }

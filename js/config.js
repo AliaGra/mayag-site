@@ -3,7 +3,7 @@ window.MAYAG_CONFIG = {
   telegramUrl: 'https://t.me/MAYAG_fit_Platform_bot',
   phoneDisplay: '+380 50 788 70 41',
   phoneHref: 'tel:+380507887041',
-  emailDisplay: 'info@mayag.fit',
-  emailHref: 'mailto:info@mayag.fit',
+  emailDisplay: 'help@mayag.fit',
+  emailHref: 'mailto:help@mayag.fit',
   siteUrl: 'https://mayag.fit'
 };

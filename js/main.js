@@ -3,6 +3,8 @@
   var telegramUrl = cfg.telegramUrl || 'https://t.me/MAYAG_fit_Platform_bot';
   var phoneHref = cfg.phoneHref || 'tel:+380507887041';
   var phoneDisplay = cfg.phoneDisplay || '+380 50 788 70 41';
+  var emailHref = cfg.emailHref || 'mailto:info@mayag.fit';
+  var emailDisplay = cfg.emailDisplay || 'info@mayag.fit';
 
   document.querySelectorAll('[data-telegram]').forEach(function (el) {
     el.setAttribute('href', telegramUrl);
@@ -14,6 +16,13 @@
     el.setAttribute('href', phoneHref);
     if (el.childNodes.length <= 1) {
       el.textContent = phoneDisplay;
+    }
+  });
+
+  document.querySelectorAll('[data-email]').forEach(function (el) {
+    el.setAttribute('href', emailHref);
+    if (el.childNodes.length <= 1) {
+      el.textContent = emailDisplay;
     }
   });
 

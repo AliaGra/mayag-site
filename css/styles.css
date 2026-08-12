@@ -678,6 +678,11 @@ ul {
   gap: 0.9rem;
 }
 
+.contacts-grid--single {
+  grid-template-columns: minmax(0, 28rem);
+  justify-content: start;
+}
+
 .contacts-card h2 {
   margin: 0 0 0.45rem;
 }

@@ -1012,10 +1012,32 @@ ul {
     display: none;
   }
 
+  .site-nav {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    overflow: visible;
+    gap: 0.35rem;
+  }
+
   .site-nav a {
+    width: auto;
+    flex: unset;
+    min-height: 2.5rem;
     font-size: 0.68rem;
-    padding: 0.28rem 0.3rem;
-    min-height: 2.2rem;
+    padding: 0.28rem 0.35rem;
+  }
+
+  .site-nav a:nth-child(-n+3) {
+    grid-column: span 2;
+  }
+
+  .site-nav a:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  .site-nav a:nth-child(5) {
+    grid-column: 4 / span 2;
   }
 
   .btn {

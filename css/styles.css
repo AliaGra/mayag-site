@@ -210,6 +210,14 @@ ul {
   color: var(--red);
 }
 
+.header-actions .btn {
+  padding: 0.7rem 1.05rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  min-height: 42px;
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -378,6 +386,47 @@ ul {
   color: var(--muted);
 }
 
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.how-steps__item {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem 1.1rem 1.35rem;
+  box-shadow: 0 6px 18px rgba(10, 10, 10, 0.04);
+}
+
+.how-steps__num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--red);
+  margin-bottom: 0.55rem;
+}
+
+.how-steps__title {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.3;
+}
+
+.how-steps__text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .audience-nav {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -514,6 +563,12 @@ ul {
 .feature-block__subtitle {
   margin: 0;
   color: var(--muted);
+}
+
+.feature-block__note {
+  margin: 0.55rem 0 0;
+  color: var(--text);
+  font-weight: 600;
 }
 
 .feature-grid {
@@ -978,7 +1033,8 @@ ul {
   }
 
   .feature-grid,
-  .contacts-grid {
+  .contacts-grid,
+  .how-steps {
     grid-template-columns: 1fr;
   }
 

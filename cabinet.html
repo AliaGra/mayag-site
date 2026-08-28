@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Кабінет тренера — MAYAG</title>
+  <meta name="description" content="Кабінет тренера MAYAG: переглянь свою публічну вітрину та продовжуй роботу в Telegram.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="canonical" href="https://mayag.fit/cabinet.html">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=20260828">
+</head>
+<body class="cabinet-page">
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="MAYAG — на головну">
+        <img class="brand__logo brand__logo--round" src="assets/logo-mayag-round.png" width="116" height="116" alt="MAYAG">
+      </a>
+      <nav class="site-nav" aria-label="Основна навігація">
+        <a href="solo.html">Тренуйся сам</a>
+        <a href="with-coach.html">Тренуйся з тренером</a>
+        <a href="coaches.html">Для тренерів</a>
+        <a href="clubs.html">Для клубів та шкіл</a>
+        <a href="contacts.html">Контакти</a>
+      </nav>
+      <div class="header-actions">
+        <a class="header-phone" data-phone href="tel:+380507887041">+380 50 788 70 41</a>
+        <a class="btn btn--primary" data-telegram href="https://t.me/MAYAG_fit_Platform_bot">ВІДКРИТИ В TELEGRAM</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="cabinet-hero">
+      <div class="container container--narrow">
+        <div class="cabinet-hero__head reveal">
+          <p class="eyebrow">MAYAG · КАБІНЕТ</p>
+          <h1 class="feature-block__title">Вітрина тренера</h1>
+          <p class="feature-block__subtitle">Увійди через Telegram, щоб побачити свою публічну картку — так, як її бачать клієнти.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cabinet-content">
+      <div class="container container--narrow">
+        <div id="cabinet-login" class="cabinet-card reveal">
+          <h2>Увійти через Telegram</h2>
+          <p>Без логіна й пароля. Telegram підтверджує твій акаунт, а MAYAG знаходить профіль тренера в платформі.</p>
+          <div class="telegram-login" id="telegram-login-widget" aria-label="Вхід через Telegram"></div>
+          <p class="cabinet-card__hint">Кнопка відкриває вікно підтвердження Telegram. Дані зберігаються в профілі MAYAG, не на сайті.</p>
+        </div>
+
+        <div id="cabinet-loading" class="cabinet-card is-hidden" aria-live="polite">
+          <p class="cabinet-status">Перевіряємо профіль у MAYAG…</p>
+        </div>
+
+        <div id="cabinet-error" class="cabinet-card cabinet-card--error is-hidden" aria-live="polite">
+          <h2 id="cabinet-error-title">Не вдалося відкрити кабінет</h2>
+          <p id="cabinet-error-text"></p>
+          <div class="cabinet-actions">
+            <button id="cabinet-retry" class="btn btn--dark" type="button">Спробувати ще раз</button>
+            <a class="btn btn--primary" data-telegram href="https://t.me/MAYAG_fit_Platform_bot">ВІДКРИТИ MAYAG У TELEGRAM</a>
+          </div>
+        </div>
+
+        <div id="cabinet-view" class="is-hidden" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__brand">MAYAG</p>
+      <p class="site-footer__slogan">РУХАЙСЯ • ДОСЯГАЙ • ЗРОСТАЙ</p>
+      <nav class="site-footer__nav" aria-label="Розділи сайту">
+        <a href="solo.html">Тренуйся сам</a>
+        <a href="with-coach.html">Тренуйся з тренером</a>
+        <a href="coaches.html">Для тренерів</a>
+        <a href="clubs.html">Для клубів та шкіл</a>
+        <a href="contacts.html">Контакти</a>
+      </nav>
+      <a class="site-footer__domain" href="https://mayag.fit">mayag.fit</a>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/cabinet.js"></script>
+  <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="MAYAG_fit_Platform_bot" data-size="large" data-userpic="false" data-onauth="onTelegramAuth(user)"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

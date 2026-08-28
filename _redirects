@@ -2,3 +2,4 @@
 https://www.mayag.fit/* https://mayag.fit/:splat 301
 http://www.mayag.fit/* https://mayag.fit/:splat 301
 http://mayag.fit/* https://mayag.fit/:splat 301
+/cabinet /cabinet.html 200

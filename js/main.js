@@ -6,6 +6,25 @@
   var phoneDisplay = cfg.phoneDisplay || '+380 50 788 70 41';
   var emailHref = cfg.emailHref || 'mailto:help@mayag.fit';
   var emailDisplay = cfg.emailDisplay || 'help@mayag.fit';
+  var cabinetUrl = cfg.cabinetUrl || 'cabinet.html';
+
+  function addCabinetLinks() {
+    var currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.site-nav, .site-footer__nav').forEach(function (nav) {
+      if (nav.querySelector('[data-cabinet-link]')) return;
+      var link = document.createElement('a');
+      link.href = cabinetUrl;
+      link.textContent = 'Кабінет';
+      link.setAttribute('data-cabinet-link', '');
+      if (currentPath === 'cabinet.html' || currentPath === 'cabinet') {
+        link.classList.add('is-active');
+        link.setAttribute('aria-current', 'page');
+      }
+      nav.appendChild(link);
+    });
+  }
+
+  addCabinetLinks();
 
   document.querySelectorAll('[data-telegram]').forEach(function (el) {
     el.setAttribute('href', telegramUrl);

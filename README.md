@@ -1,6 +1,6 @@
 # MAYAG — сайт mayag.fit
 
-Статична візитка платформи MAYAG. Без реєстрації, кабінету та БД — усі дії в Telegram-боті.
+Статична візитка платформи MAYAG. Основні дії залишаються в Telegram-боті; сайт також має MVP-вітрину тренера з входом через Telegram.
 
 ## Як оновлювати сайт (постійний процес)
 
@@ -21,6 +21,23 @@
 Єдине місце: `js/config.js` → `telegramUrl`  
 Зараз: `https://t.me/MAYAG_fit_Platform_bot`
 
+## Кабінет тренера
+
+`cabinet.html` — read-only вітрина тренера. Вхід виконується через Telegram Login Widget, а
+серверна перевірка та читання профілю працюють через Cloudflare Pages Functions:
+
+- `functions/api/cabinet/coach.js` — перевірка Telegram і профіль тренера
+- `functions/api/public/coach.js` — публічна картка тренера
+- `coach.html?id=<telegram_chat_id>` — публічний перегляд
+
+У Cloudflare Pages → Settings → Variables потрібно додати:
+
+- `BOT_TOKEN` — токен основного MAYAG-бота
+- `SUPABASE_URL`
+- `SUPABASE_SERVICE_ROLE_KEY` — тільки як серверний secret, не в коді сайту
+
+У BotFather для основного бота потрібно виконати `/setdomain` і вказати `mayag.fit`.
+
 ## Структура
 
 ```
@@ -29,6 +46,7 @@ css/styles.css
 js/config.js
 js/main.js
 assets/         ← логотип, favicon, og-image
+functions/      ← серверна перевірка Telegram і read-only API кабінету
 robots.txt
 sitemap.xml
 _redirects      ← www → mayag.fit

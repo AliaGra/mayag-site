@@ -571,6 +571,219 @@ ul {
   font-weight: 600;
 }
 
+.is-hidden {
+  display: none !important;
+}
+
+.eyebrow,
+.cabinet-card__label {
+  margin: 0 0 0.65rem;
+  color: var(--red);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cabinet-hero {
+  padding: 2.5rem 0 1rem;
+}
+
+.cabinet-hero__head {
+  text-align: center;
+}
+
+.cabinet-content {
+  padding: 1rem 0 4rem;
+}
+
+.cabinet-card {
+  margin-bottom: 1rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.cabinet-card h2 {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  line-height: 1.25;
+}
+
+.cabinet-card h3 {
+  margin: 1.35rem 0 0.55rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.cabinet-card p {
+  color: var(--muted);
+}
+
+.cabinet-card__hint,
+.cabinet-muted,
+.cabinet-status {
+  margin: 0.9rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.cabinet-card--error {
+  border-color: rgba(227, 6, 19, 0.45);
+}
+
+.cabinet-card--error h2 {
+  color: var(--red);
+}
+
+.telegram-login {
+  min-height: 44px;
+  margin: 1.25rem 0 0.35rem;
+}
+
+.cabinet-actions,
+.cabinet-preview__actions,
+.cabinet-public-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: center;
+  margin-top: 1.25rem;
+}
+
+.cabinet-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.cabinet-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.cabinet-welcome p {
+  margin-bottom: 0;
+}
+
+.cabinet-preview {
+  background: var(--white);
+}
+
+.cabinet-preview__line {
+  margin: 0.45rem 0;
+  color: var(--text) !important;
+  font-weight: 600;
+}
+
+.cabinet-links a {
+  color: var(--red);
+  font-weight: 700;
+}
+
+.cabinet-venues {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cabinet-venues li {
+  display: grid;
+  gap: 0.1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.cabinet-venues li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.cabinet-venues span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.cabinet-documents {
+  margin-top: 1.2rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.cabinet-checklist {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0 0 1.35rem;
+  padding: 0;
+  list-style: none;
+}
+
+.cabinet-checklist li {
+  display: grid;
+  grid-template-columns: 1.35rem 1fr auto;
+  gap: 0.45rem;
+  align-items: center;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.cabinet-checklist li > span:first-child {
+  color: var(--red);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.cabinet-checklist li.is-complete > span:first-child {
+  color: #16803c;
+}
+
+.cabinet-checklist strong {
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+.cabinet-next__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.cabinet-next__items span {
+  padding: 0.55rem 0.7rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.cabinet-logout {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cabinet-public-card {
+  max-width: 42rem;
+  margin-inline: auto;
+  background: var(--white);
+}
+
+.cabinet-public-card__name {
+  color: var(--black);
+}
+
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1038,6 +1251,10 @@ ul {
     grid-template-columns: 1fr;
   }
 
+  .cabinet-grid {
+    grid-template-columns: 1fr;
+  }
+
   .contacts-help__grid {
     grid-template-columns: 1fr;
   }
@@ -1089,6 +1306,28 @@ ul {
 
   .hero__panel {
     padding: 1.1rem 1rem 1.4rem;
+  }
+
+  .cabinet-hero {
+    padding-top: 1.5rem;
+  }
+
+  .cabinet-welcome {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cabinet-actions,
+  .cabinet-preview__actions,
+  .cabinet-public-card__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cabinet-actions .btn,
+  .cabinet-preview__actions .btn,
+  .cabinet-public-card__actions .btn {
+    width: 100%;
   }
 
   .audience-nav {

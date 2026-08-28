@@ -620,6 +620,48 @@ ul {
   font-size: 1.05rem;
 }
 
+#cabinet-onboarding {
+  display: grid;
+  gap: 0.7rem;
+}
+
+#cabinet-phone-form {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 28rem;
+}
+
+#cabinet-phone-form label {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+#cabinet-phone-form input {
+  min-height: 2.8rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--black);
+  font: inherit;
+}
+
+#cabinet-phone-form input:focus {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+#cabinet-phone-form button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.cabinet-card hr {
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
 .cabinet-card p {
   color: var(--muted);
 }

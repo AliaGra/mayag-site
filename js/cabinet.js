@@ -2,6 +2,8 @@
   var cfg = window.MAYAG_CONFIG || {};
   var apiUrl = (cfg.cabinetApiUrl || '').replace(/\/$/, '');
   var loginStorageKey = 'mayag.telegram.login';
+  var onboardingStorageKey = 'mayag.cabinet.onboarding';
+  var onboardingPollTimer = null;
 
   function byId(id) {
     return document.getElementById(id);
@@ -166,17 +168,96 @@
     }
   }
 
+  function setOnboardingStatus(text) {
+    var node = byId('cabinet-onboarding-status');
+    if (node) node.textContent = text || '';
+  }
+
+  async function pollOnboarding(token) {
+    if (!token) return;
+    setLoginVisible(false);
+    var loading = document.querySelector('#cabinet-loading .cabinet-status');
+    if (loading) loading.textContent = 'Чекаємо підтвердження та завершення профілю в Telegram…';
+    try {
+      var response = await fetch(apiUrl + '/api/cabinet/onboarding?token=' + encodeURIComponent(token), {
+        cache: 'no-store'
+      });
+      var result = await response.json();
+      if (!response.ok) throw new Error(result.message || 'Запит реєстрації не знайдено.');
+      if (result.status === 'completed' && result.profile) {
+        sessionStorage.removeItem(onboardingStorageKey);
+        renderProfile(result.profile);
+        return;
+      }
+      if (result.status === 'completed') {
+        sessionStorage.removeItem(onboardingStorageKey);
+        showError('Кабінет недоступний', result.message || 'Профіль тренера не отримано.');
+        return;
+      }
+      if (result.status === 'expired') {
+        sessionStorage.removeItem(onboardingStorageKey);
+        showError('Час очікування завершився', 'Повернись на сайт і створи новий запит на реєстрацію.');
+        return;
+      }
+      if (onboardingPollTimer) window.clearTimeout(onboardingPollTimer);
+      onboardingPollTimer = window.setTimeout(function () {
+        pollOnboarding(token);
+      }, 3000);
+    } catch (error) {
+      showError('Не вдалося перевірити реєстрацію', error.message);
+    }
+  }
+
+  async function startOnboarding(event) {
+    event.preventDefault();
+    var form = event.currentTarget;
+    var phone = byId('cabinet-phone');
+    var submit = form.querySelector('button[type="submit"]');
+    if (!phone || !phone.value.trim()) return;
+    if (submit) submit.disabled = true;
+    setOnboardingStatus('Створюємо одноразове посилання…');
+    try {
+      var response = await fetch(apiUrl + '/api/cabinet/onboarding', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone: phone.value.trim() })
+      });
+      var result = await response.json();
+      if (!response.ok) throw new Error(result.message || 'Не вдалося створити запит.');
+      sessionStorage.setItem(onboardingStorageKey, result.token);
+      setOnboardingStatus('Відкриваємо Telegram. Надішли контакт і заверши анкету тренера.');
+      var opened = window.open(result.telegramUrl, '_blank', 'noopener,noreferrer');
+      if (!opened) window.location.href = result.telegramUrl;
+      pollOnboarding(result.token);
+    } catch (error) {
+      setOnboardingStatus(error.message);
+      if (submit) submit.disabled = false;
+    }
+  }
+
   window.onTelegramAuth = function (user) {
     loadProfile(user);
   };
 
   document.addEventListener('DOMContentLoaded', function () {
+    var onboardingForm = byId('cabinet-phone-form');
+    if (onboardingForm) onboardingForm.addEventListener('submit', startOnboarding);
     var retry = byId('cabinet-retry');
     if (retry) retry.addEventListener('click', function () {
       sessionStorage.removeItem(loginStorageKey);
+      var pending = sessionStorage.getItem(onboardingStorageKey);
+      if (pending) {
+        pollOnboarding(pending);
+        return;
+      }
       setLoginVisible(true);
     });
     try {
+      var pendingOnboarding = sessionStorage.getItem(onboardingStorageKey);
+      if (pendingOnboarding) {
+        pollOnboarding(pendingOnboarding);
+        return;
+      }
       var stored = sessionStorage.getItem(loginStorageKey);
       loadProfile(stored ? JSON.parse(stored) : null);
     } catch (_) {

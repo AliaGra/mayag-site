@@ -59,7 +59,7 @@ function mapServices(modes) {
   return labels;
 }
 
-async function getCoachProfile(env, chatId) {
+export async function getCoachProfile(env, chatId) {
   const select =
     'user_id,chat_id,first_name,last_name,city,oblast,district,birth_date,instagram,telegram_username,coach_training_types,coach_service_modes,role,is_blocked';
   let users = await supabaseRows(env, 'users', {

@@ -57,6 +57,30 @@ export async function supabaseRows(env, table, params) {
   return Array.isArray(data) ? data : [];
 }
 
+export async function supabaseMutation(env, table, method, params, body) {
+  const baseUrl = requireEnv(env, 'SUPABASE_URL')
+    .replace(/\/rest\/v1\/?$/i, '')
+    .replace(/\/$/, '');
+  const serviceKey = requireEnv(env, 'SUPABASE_SERVICE_ROLE_KEY');
+  const query = new URLSearchParams(params || {});
+  const response = await fetch(`${baseUrl}/rest/v1/${table}?${query.toString()}`, {
+    method,
+    headers: {
+      apikey: serviceKey,
+      Authorization: `Bearer ${serviceKey}`,
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      Prefer: 'return=representation'
+    },
+    body: body == null ? undefined : JSON.stringify(body)
+  });
+  if (!response.ok) {
+    throw new Error(`Supabase ${table}: ${response.status}`);
+  }
+  const data = await response.json().catch(() => []);
+  return Array.isArray(data) ? data : [];
+}
+
 export function cleanUrl(value, fallbackBase) {
   const raw = String(value || '').trim();
   if (!raw) return '';

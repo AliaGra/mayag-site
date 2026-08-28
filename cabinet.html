@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20260828">
+  <link rel="stylesheet" href="css/styles.css?v=20260828-1">
 </head>
 <body class="cabinet-page">
   <header class="site-header">
@@ -48,8 +48,19 @@
     <section class="cabinet-content">
       <div class="container container--narrow">
         <div id="cabinet-login" class="cabinet-card reveal">
+          <div id="cabinet-onboarding">
+            <h2>Створити кабінет тренера</h2>
+            <p>Введи номер телефону. MAYAG передасть тебе в Telegram для безпечного підтвердження контакту, після чого ти заповниш профіль у платформі.</p>
+            <form id="cabinet-phone-form">
+              <label for="cabinet-phone">Мобільний телефон</label>
+              <input id="cabinet-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+380 50 123 45 67" required>
+              <button class="btn btn--primary" type="submit">ПІДТВЕРДИТИ ЧЕРЕЗ TELEGRAM</button>
+            </form>
+            <p id="cabinet-onboarding-status" class="cabinet-card__hint" aria-live="polite"></p>
+          </div>
+          <hr>
           <h2>Увійти через Telegram</h2>
-          <p>Без логіна й пароля. Telegram підтверджує твій акаунт, а MAYAG знаходить профіль тренера в платформі.</p>
+          <p>Якщо профіль тренера вже створений у MAYAG, увійди без логіна й пароля.</p>
           <div class="telegram-login" id="telegram-login-widget" aria-label="Вхід через Telegram">
             <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="MAYAG_fit_Platform_bot" data-size="large" data-userpic="false" data-onauth="onTelegramAuth(user)"></script>
           </div>
@@ -90,7 +101,7 @@
   </footer>
 
   <script src="js/config.js"></script>
-  <script src="js/cabinet.js?v=20260828-3"></script>
+  <script src="js/cabinet.js?v=20260828-4"></script>
   <script src="js/main.js?v=20260828-2"></script>
 </body>
 </html>

@@ -50,7 +50,9 @@
         <div id="cabinet-login" class="cabinet-card reveal">
           <h2>Увійти через Telegram</h2>
           <p>Без логіна й пароля. Telegram підтверджує твій акаунт, а MAYAG знаходить профіль тренера в платформі.</p>
-          <div class="telegram-login" id="telegram-login-widget" aria-label="Вхід через Telegram"></div>
+          <div class="telegram-login" id="telegram-login-widget" aria-label="Вхід через Telegram">
+            <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="MAYAG_fit_Platform_bot" data-size="large" data-userpic="false" data-onauth="onTelegramAuth(user)"></script>
+          </div>
           <p class="cabinet-card__hint">Кнопка відкриває вікно підтвердження Telegram. Дані зберігаються в профілі MAYAG, не на сайті.</p>
         </div>
 
@@ -89,7 +91,6 @@
 
   <script src="js/config.js"></script>
   <script src="js/cabinet.js"></script>
-  <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="MAYAG_fit_Platform_bot" data-size="large" data-userpic="false" data-onauth="onTelegramAuth(user)"></script>
   <script src="js/main.js?v=20260828-2"></script>
 </body>
 </html>

@@ -29,11 +29,12 @@
   function render(profile) {
     var name = [profile.firstName, profile.lastName].filter(Boolean).join(' ') || 'Тренер';
     var location = [profile.city, profile.oblast, profile.district].filter(Boolean).join(', ');
+    var isPreview = new URLSearchParams(window.location.search).get('preview') === '1';
     var links = [];
     if (profile.instagram) {
       links.push('<a href="' + escapeHtml(profile.instagram) + '" target="_blank" rel="noopener noreferrer">Instagram</a>');
     }
-    if (profile.telegramUsername) {
+    if (profile.telegramUsername && !isPreview) {
       links.push('<a href="https://t.me/' + encodeURIComponent(profile.telegramUsername) + '" target="_blank" rel="noopener noreferrer">Написати в Telegram</a>');
     }
     var venues = Array.isArray(profile.venues) ? profile.venues : [];
@@ -44,7 +45,7 @@
           (address ? '<span>' + escapeHtml(address) + '</span>' : '') + '</li>';
       }).join('') + '</ul>'
       : '<p class="cabinet-muted">Інформація про заклади не додана.</p>';
-    var contactButton = profile.telegramUsername
+    var contactButton = profile.telegramUsername && !isPreview
       ? '<a class="btn btn--dark" href="https://t.me/' + encodeURIComponent(profile.telegramUsername) + '" target="_blank" rel="noopener noreferrer">НАПИСАТИ ТРЕНЕРУ В TELEGRAM</a>'
       : '';
 

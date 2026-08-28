@@ -82,7 +82,7 @@
   function renderProfile(profile) {
     var name = [profile.firstName, profile.lastName].filter(Boolean).join(' ') || 'Тренер';
     var publicHref = profile.publicId
-      ? 'coach.html?id=' + encodeURIComponent(profile.publicId)
+      ? 'coach.html?id=' + encodeURIComponent(profile.publicId) + '&preview=1'
       : '';
     var links = [];
     if (profile.instagram) {

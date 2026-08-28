@@ -10,17 +10,20 @@
 
   function addCabinetLinks() {
     var currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.site-nav, .site-footer__nav').forEach(function (nav) {
-      if (nav.querySelector('[data-cabinet-link]')) return;
+    document.querySelectorAll('.site-header .header-actions').forEach(function (actions) {
+      var telegramButton = actions.querySelector('[data-telegram]');
+      if (telegramButton) telegramButton.remove();
+      if (actions.querySelector('[data-cabinet-link]')) return;
       var link = document.createElement('a');
+      link.className = 'btn btn--primary';
       link.href = cabinetUrl;
-      link.textContent = 'Кабінет';
+      link.textContent = 'КАБІНЕТ';
       link.setAttribute('data-cabinet-link', '');
       if (currentPath === 'cabinet.html' || currentPath === 'cabinet') {
         link.classList.add('is-active');
         link.setAttribute('aria-current', 'page');
       }
-      nav.appendChild(link);
+      actions.appendChild(link);
     });
   }
 

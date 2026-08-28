@@ -60,11 +60,21 @@ function mapServices(modes) {
 }
 
 async function getCoachProfile(env, chatId) {
-  const users = await supabaseRows(env, 'users', {
-    select: 'chat_id,first_name,last_name,city,oblast,district,birth_date,instagram,telegram_username,coach_training_types,coach_service_modes,role,is_blocked',
+  const select =
+    'user_id,chat_id,first_name,last_name,city,oblast,district,birth_date,instagram,telegram_username,coach_training_types,coach_service_modes,role,is_blocked';
+  let users = await supabaseRows(env, 'users', {
+    select,
     chat_id: `eq.${chatId}`,
     limit: '1'
   });
+  // Older imported profiles may have the Telegram ID only in user_id.
+  if (!users.length) {
+    users = await supabaseRows(env, 'users', {
+      select,
+      user_id: `eq.${chatId}`,
+      limit: '1'
+    });
+  }
   const user = users[0];
   if (!user) return { code: 'USER_NOT_FOUND' };
   if (user.is_blocked === true) return { code: 'BLOCKED' };

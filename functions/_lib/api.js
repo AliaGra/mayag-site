@@ -38,7 +38,9 @@ export function requireEnv(env, name) {
 }
 
 export async function supabaseRows(env, table, params) {
-  const baseUrl = requireEnv(env, 'SUPABASE_URL').replace(/\/$/, '');
+  const baseUrl = requireEnv(env, 'SUPABASE_URL')
+    .replace(/\/rest\/v1\/?$/i, '')
+    .replace(/\/$/, '');
   const serviceKey = requireEnv(env, 'SUPABASE_SERVICE_ROLE_KEY');
   const query = new URLSearchParams(params || {});
   const response = await fetch(`${baseUrl}/rest/v1/${table}?${query.toString()}`, {

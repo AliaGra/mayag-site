@@ -94,7 +94,7 @@ components:
 
 **Creative North Star: "The Telegram Gym Floor"**
 
-MAYAG Fit’s public site is a bright, direct handoff into Telegram — not a lifestyle magazine and not a dense SaaS dashboard. Marketing pages (Persuade) lead with brand red, Syne display type, and one primary action: open the bot. Operate surfaces (`cabinet.html`, `coach.html`) keep the same palette but drop marketing nav density so the task (login, readiness, public card) stays scanable.
+MAYAG Fit’s public site is a bright, direct handoff into Telegram — not a lifestyle magazine and not a dense SaaS dashboard. Marketing pages (Persuade) lead with brand red, Syne display type, and one primary action: open the bot. The public coach card (`coach.html`) keeps a quieter operate shell when needed; the site coach cabinet is paused.
 
 Confirmed rejections: purple-gradient “AI SaaS” looks; cream-and-terracotta editorial templates; newspaper broadsheet layouts; eyebrow/kicker labels above headings; inset hero media cards; inventing metrics or testimonials.
 
@@ -196,7 +196,7 @@ Controls feel **direct and athletic**: pill CTAs, clear labels, minimal chrome.
 - **Error cards:** Same card shell with error emphasis on the title; always include recovery (retry / Telegram / back).
 
 ### Navigation
-- **Persuade header:** Logo + compact role links + primary **В TELEGRAM** + ghost **КАБІНЕТ**.
+- **Persuade header:** Logo + compact role links + primary **В TELEGRAM** (cabinet CTA removed while the feature is paused).
 - **Operate header (`site-header--app`):** Logo + short app nav (На сайт, Для тренерів) — no marketing role grid.
 
 ### Inputs (cabinet)

@@ -4,97 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Кабінет тренера — MAYAG Fit</title>
-  <meta name="description" content="Кабінет тренера MAYAG Fit: переглянь свою публічну вітрину та продовжуй роботу в Telegram.">
-  <meta name="theme-color" content="#0a0a0a">
-  <link rel="canonical" href="https://mayag.fit/cabinet.html">
+  <meta name="description" content="Кабінет тренера на сайті тимчасово вимкнено. Працюй у MAYAG Fit через Telegram.">
+  <meta name="robots" content="noindex,follow">
+  <meta http-equiv="refresh" content="0; url=coaches.html">
+  <link rel="canonical" href="https://mayag.fit/coaches.html">
   <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="apple-touch-icon" href="assets/favicon.png">
-
-  <link rel="stylesheet" href="fonts/mayag-fonts.css?v=20261110-e">
-  <link rel="stylesheet" href="css/styles.css?v=20261110-e">
+  <script>location.replace('coaches.html');</script>
 </head>
-<body class="cabinet-page">
-  <a class="skip-link" href="#top">До змісту</a>
-  <header class="site-header site-header--app">
-    <div class="container site-header__inner">
-      <a class="brand" href="index.html" aria-label="MAYAG Fit — на головну">
-        <img class="brand__logo" src="assets/logo-mayag.png" width="120" height="68" alt="MAYAG Fit">
-      </a>
-      <nav class="app-nav" aria-label="Кабінет">
-        <a href="index.html">На сайт</a>
-        <a href="coaches.html">Для тренерів</a>
-      </nav>
-      <div class="header-actions">
-        <a class="btn btn--primary" data-telegram href="https://t.me/MAYAG_fit_Platform_bot">В TELEGRAM</a>
-        <a class="btn btn--ghost is-active" data-cabinet-link href="cabinet.html" aria-current="page">КАБІНЕТ</a>
-      </div>
-    </div>
-  </header>
-
-  <main id="top">
-    <section class="cabinet-hero">
-      <div class="container container--narrow">
-        <div class="cabinet-hero__head reveal">
-          <h1 class="cabinet-title">Вітрина тренера</h1>
-          <p class="cabinet-lead">Увійди через Telegram, щоб переглянути публічну картку так, як її бачать клієнти.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="cabinet-content">
-      <div class="container container--narrow">
-        <div id="cabinet-login" class="cabinet-card reveal">
-          <div id="cabinet-onboarding">
-            <h2>Створити кабінет тренера</h2>
-            <p>Введи номер телефону. MAYAG Fit передасть тебе в Telegram для безпечного підтвердження контакту, після чого ти заповниш профіль у платформі.</p>
-            <form id="cabinet-phone-form">
-              <label for="cabinet-phone">Мобільний телефон</label>
-              <input id="cabinet-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+380 50 123 45 67" required>
-              <button class="btn btn--primary" type="submit">ПІДТВЕРДИТИ ЧЕРЕЗ TELEGRAM</button>
-            </form>
-            <p id="cabinet-onboarding-status" class="cabinet-card__hint" aria-live="polite"></p>
-          </div>
-          <hr>
-          <h2>Увійти через Telegram</h2>
-          <p>Якщо профіль тренера вже створений у MAYAG Fit, увійди без логіна й пароля.</p>
-          <div class="telegram-login" id="telegram-login-widget" aria-label="Вхід через Telegram">
-            <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="MAYAG_fit_Platform_bot" data-size="large" data-userpic="false" data-onauth="onTelegramAuth(user)"></script>
-          </div>
-          <p class="cabinet-card__hint">Кнопка відкриває вікно підтвердження Telegram. Дані зберігаються в профілі MAYAG Fit, не на сайті.</p>
-        </div>
-
-        <div id="cabinet-loading" class="cabinet-card is-hidden" aria-live="polite">
-          <p class="cabinet-status cabinet-status--busy">Перевіряємо профіль у MAYAG Fit…</p>
-        </div>
-
-        <div id="cabinet-error" class="cabinet-card cabinet-card--error is-hidden" aria-live="polite">
-          <h2 id="cabinet-error-title">Не вдалося відкрити кабінет</h2>
-          <p id="cabinet-error-text"></p>
-          <div class="cabinet-actions">
-            <button id="cabinet-retry" class="btn btn--dark" type="button">Спробувати ще раз</button>
-            <a class="btn btn--primary" data-telegram href="https://t.me/MAYAG_fit_Platform_bot">ВІДКРИТИ В TELEGRAM</a>
-          </div>
-        </div>
-
-        <div id="cabinet-view" class="is-hidden" aria-live="polite"></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer site-footer--app">
-    <div class="container">
-      <p class="site-footer__brand">MAYAG Fit</p>
-      <nav class="site-footer__nav" aria-label="Службові посилання">
-        <a href="index.html">На сайт</a>
-        <a href="contacts.html">Контакти</a>
-        <a href="oferta.html">Оферта</a>
-      </nav>
-      <a class="site-footer__domain" href="https://mayag.fit">mayag.fit</a>
-    </div>
-  </footer>
-
-  <script src="js/config.js"></script>
-  <script src="js/cabinet.js?v=20261110-e"></script>
-  <script src="js/main.js?v=20261110-e"></script>
+<body>
+  <p>Кабінет тренера на сайті тимчасово вимкнено. <a href="coaches.html">Для тренерів</a> або <a href="https://t.me/MAYAG_fit_Platform_bot">відкрий MAYAG Fit у Telegram</a>.</p>
 </body>
 </html>

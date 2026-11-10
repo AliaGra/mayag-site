@@ -57,8 +57,8 @@
       "name": "Ghost Button",
       "kind": "button",
       "refersTo": "button-ghost",
-      "description": "Secondary actions such as Кабінет.",
-      "html": "<a class=\"btn btn--ghost\" href=\"cabinet.html\">КАБІНЕТ</a>",
+      "description": "Secondary ghost actions (cabinet CTA currently paused on the public site).",
+      "html": "<a class=\"btn btn--ghost\" href=\"contacts.html\">КОНТАКТИ</a>",
       "css": ".btn.btn--ghost { background: transparent; color: #0a0a0a; border: 2px solid #0a0a0a; border-radius: 999px; min-height: 44px; }"
     },
     {

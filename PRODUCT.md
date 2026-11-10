@@ -17,7 +17,7 @@ Secondary audiences present on the site (landing paths exist): people who train 
 
 ## Product Purpose
 
-MAYAG Fit is a fitness platform that runs in Telegram (not a separate installable app). The website is the public face and entry point: explain the product, route people by role, and send them into the Telegram bot (and coach cabinet where relevant) so they can begin work.
+MAYAG Fit is a fitness platform that runs in Telegram (not a separate installable app). The website is the public face and entry point: explain the product, route people by role, and send them into the Telegram bot so they can begin work.
 
 Success for a site visit: the visitor understands what MAYAG Fit is, chooses their path if needed, and opens Telegram to start.
 
@@ -27,9 +27,9 @@ MAYAG Fit brings all fitness participants into one system where it is easier for
 
 ## Operating Context
 
-- Public site: https://mayag.fit (static pages + Cloudflare Pages Functions for coach cabinet / public coach card).
+- Public site: https://mayag.fit (static marketing pages; optional Cloudflare Pages Functions for public coach card).
 - Primary product surface: Telegram bot (`js/config.js` → `telegramUrl`).
-- Coach cabinet on the site: Telegram Login Widget + read-only API (`cabinet.html`, `functions/api/…`).
+- Coach cabinet on the site: **paused** (no public entry; `cabinet.html` redirects to `coaches.html`). May return later if a clear use case appears.
 - Content and UI language on the public site: Ukrainian (`uk`). Russian (`ru`) is a planned expansion, not shipped on mayag.fit yet.
 
 ## Capabilities and Constraints
@@ -50,7 +50,7 @@ MAYAG Fit brings all fitness participants into one system where it is easier for
 
 ## Evidence on Hand
 
-- Live marketing pages: `index.html`, `solo.html`, `with-coach.html`, `coaches.html`, `clubs.html`, `contacts.html`, `oferta.html`, `cabinet.html`, `coach.html`.
+- Live marketing pages: `index.html`, `solo.html`, `with-coach.html`, `coaches.html`, `clubs.html`, `contacts.html`, `oferta.html`; optional `coach.html` public card.
 - Shared styles: `css/styles.css`; config: `js/config.js`.
 - Brand imagery in `assets/`.
 - No fabricated case studies or third-party quotes should be added without real source material.

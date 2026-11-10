@@ -1,6 +1,6 @@
 # MAYAG Fit — сайт mayag.fit
 
-Статична візитка платформи MAYAG Fit. Основні дії залишаються в Telegram-боті; сайт також має MVP-вітрину тренера з входом через Telegram.
+Статична візитка платформи MAYAG Fit. Основні дії залишаються в Telegram-боті. Кабінет тренера на сайті тимчасово вимкнено (немає входу з меню).
 
 ## Як оновлювати сайт (постійний процес)
 
@@ -21,22 +21,17 @@
 Єдине місце: `js/config.js` → `telegramUrl`  
 Зараз: `https://t.me/MAYAG_fit_Platform_bot`
 
-## Кабінет тренера
+## Кабінет тренера (пауза)
 
-`cabinet.html` — read-only вітрина тренера. Вхід виконується через Telegram Login Widget, а
-серверна перевірка та читання профілю працюють через Cloudflare Pages Functions:
+Публічний вхід у кабінет знято з меню. `cabinet.html` редіректить на `coaches.html`.
 
-- `functions/api/cabinet/coach.js` — перевірка Telegram і профіль тренера
+Залишилось для можливого повернення / публічної картки:
+
 - `functions/api/public/coach.js` — публічна картка тренера
 - `coach.html?id=<telegram_chat_id>` — публічний перегляд
+- `functions/api/cabinet/*`, `js/cabinet.js` — код кабінету на паузі
 
-У Cloudflare Pages → Settings → Variables потрібно додати:
-
-- `BOT_TOKEN` — токен основного MAYAG Fit-бота
-- `SUPABASE_URL`
-- `SUPABASE_SERVICE_ROLE_KEY` — тільки як серверний secret, не в коді сайту
-
-У BotFather для основного бота потрібно виконати `/setdomain` і вказати `mayag.fit`.
+Якщо кабінет знову вмикатимуть, у Cloudflare Pages → Variables знадобляться `BOT_TOKEN`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, і в BotFather — `/setdomain` → `mayag.fit`.
 
 ## Структура
 

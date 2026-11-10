@@ -77,10 +77,11 @@
 - Контроль: detect `index.html` → лише advisory em-dash; `cabinet.html` → 0; critique score **28/36** (було 23/36)
 
 ### Етап 2 — Hero і перший екран (ключове перетворення)
-- [ ] H1 — видимий H1, один supporting рядок, один primary CTA в бот
-- [ ] Візуальний якір під `buildPath: comp` (комп → код), не ламаючи бренд-колір і «не додаток — Telegram»
-- [ ] Узгодити роль лого: бренд-сигнал, але не заміна заголовка
-- Контроль: `/impeccable critique index.html` (повний, з браузером)
+**Закрито 2026-11-10.**
+- [x] H1 — видимий H1 «Тренування в Telegram»; один lead; один CTA «ВІДКРИТИ В TELEGRAM»
+- [x] Візуальний якір: комп `docs/comps/hero-comp-stage2.jpg` → фон `assets/hero-bg-stage2.jpg` + HTML
+- [x] Лого MAYAG light як бренд-сигнал (не замінює заголовок); full-bleed, без inset-панелі
+- Контроль: browser verify; detect; critique **31/36** (було 28). Повний dual-subagent critique можна повторити як контрольний прогін.
 
 ### Етап 3 — Сторінки ролей
 - [ ] `solo.html`, `with-coach.html`, `coaches.html`, `clubs.html` — та сама ієрархія і CTA-логіка
@@ -114,9 +115,10 @@
 |------|-----|-----------------|
 | 2026-11-09 | Baseline (detect + source review) | 23/36; P0: H1, H2 |
 | 2026-11-10 | Етап 1 (H2, N1, C1, P1) | 28/36; P0 лишився H1 (hero); detect index clean крім em-dash |
+| 2026-11-10 | Етап 2 (hero bleed + H1) | 31/36; P0 H1 закрито; комп→код |
 
 ---
 
 ## 6. Наступна дія (за замовчуванням)
 
-**Етап 2** — hero / перший екран (H1): видимий заголовок, один supporting рядок, один primary CTA в бот; візуальний якір під `buildPath: comp`.
+**Етап 3** — сторінки ролей (`solo`, `with-coach`, `coaches`, `clubs`): та сама CTA-логіка й ієрархія після нового hero.

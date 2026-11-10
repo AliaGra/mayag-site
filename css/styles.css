@@ -631,8 +631,16 @@ ul {
 }
 
 .feature-block__head {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
   max-width: 40rem;
+}
+
+.feature-block__cta {
+  margin-top: 1.35rem;
+}
+
+.feature-block__cta .btn {
+  width: auto;
 }
 
 .feature-block__title {
@@ -952,7 +960,7 @@ ul {
   margin-top: 0.12rem;
   transform: translateY(-0.28em);
   font-family: var(--font-display);
-  font-size: 0.58rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: lowercase;
@@ -1579,6 +1587,10 @@ ul {
   }
 
   .btn--lg {
+    width: 100%;
+  }
+
+  .feature-block__cta .btn--lg {
     width: 100%;
   }
 

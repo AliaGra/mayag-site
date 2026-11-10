@@ -84,9 +84,10 @@
 - Контроль: browser verify; detect; critique **31/36** (було 28). Повний dual-subagent critique можна повторити як контрольний прогін.
 
 ### Етап 3 — Сторінки ролей
-- [ ] `solo.html`, `with-coach.html`, `coaches.html`, `clubs.html` — та сама ієрархія і CTA-логіка
-- [ ] Єдиний header/footer патерн після Етапу 1–2
-- [ ] Copy uk (і ru, коли підключені) без em-dash перевантаження
+**Закрито 2026-11-10.**
+- [x] `solo` / `with-coach` / `coaches` / `clubs`: H1 + один support + note + primary CTA «ВІДКРИТИ В TELEGRAM» у intro
+- [x] Єдиний header: лого як на головній; **В TELEGRAM** primary, **КАБІНЕТ** ghost; CTA внизу уніфіковано
+- [x] Зменшено em-dash у body copy (uk); ru ще немає на сайті
 
 ### Етап 4 — Кабінет / публічна картка
 - [ ] `cabinet.html`, `coach.html` — operate-mode: щільність карток, nav, контраст
@@ -116,9 +117,10 @@
 | 2026-11-09 | Baseline (detect + source review) | 23/36; P0: H1, H2 |
 | 2026-11-10 | Етап 1 (H2, N1, C1, P1) | 28/36; P0 лишився H1 (hero); detect index clean крім em-dash |
 | 2026-11-10 | Етап 2 (hero bleed + H1) | 31/36; P0 H1 закрито; комп→код |
+| 2026-11-10 | Етап 3 (role pages CTA/hierarchy) | intro CTA + unified header; em-dash cleanup |
 
 ---
 
 ## 6. Наступна дія (за замовчуванням)
 
-**Етап 3** — сторінки ролей (`solo`, `with-coach`, `coaches`, `clubs`): та сама CTA-логіка й ієрархія після нового hero.
+**Етап 4** — кабінет / публічна картка (`cabinet.html`, `coach.html`): operate-mode, щільність, без змішування з marketing Persuade.

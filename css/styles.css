@@ -31,12 +31,18 @@
   --font-display: "Syne", system-ui, sans-serif;
   --font-body: "Manrope", system-ui, sans-serif;
   --focus: 0 0 0 3px rgba(193, 5, 18, 0.35);
+  caret-color: var(--red-ink);
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(227, 6, 19, 0.18);
+  color: var(--black);
 }
 
 html {
@@ -541,11 +547,17 @@ ul {
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 .section__subtitle {
   margin: 0;
   color: var(--muted);
+  text-wrap: pretty;
+}
+
+.section__subtitle--follow {
+  margin-top: 0.85rem;
 }
 
 .how-steps {

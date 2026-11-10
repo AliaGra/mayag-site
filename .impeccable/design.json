@@ -1,26 +1,30 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-10T14:45:00+02:00",
+  "generatedAt": "2026-11-10T15:15:00+02:00",
   "title": "Design System: MAYAG Fit",
   "extensions": {
     "colorMeta": {
       "brand-red": { "role": "primary", "displayName": "Signal Red", "canonical": "#e30613" },
       "brand-red-dark": { "role": "primary", "displayName": "Signal Red Dark", "canonical": "#b80510" },
       "brand-red-ink": { "role": "primary", "displayName": "Signal Red Ink", "canonical": "#c10512" },
-      "telegram": { "role": "secondary", "displayName": "Telegram Blue", "canonical": "#229ED9" },
+      "telegram": { "role": "secondary", "displayName": "Telegram Blue", "canonical": "#229ed9" },
       "telegram-hover": { "role": "secondary", "displayName": "Telegram Blue Hover", "canonical": "#1578a8" },
       "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0a0a0a" },
+      "ink-hover": { "role": "neutral", "displayName": "Ink Hover", "canonical": "#222222" },
       "text": { "role": "neutral", "displayName": "Body", "canonical": "#141414" },
       "muted": { "role": "neutral", "displayName": "Muted", "canonical": "#5c5c5c" },
+      "muted-soft": { "role": "neutral", "displayName": "Muted Soft", "canonical": "#9a9a9a" },
       "surface": { "role": "neutral", "displayName": "Concrete", "canonical": "#f4f4f4" },
       "surface-warm": { "role": "neutral", "displayName": "Warm Paper", "canonical": "#fbf8f5" },
-      "white": { "role": "neutral", "displayName": "White", "canonical": "#ffffff" }
+      "cabinet-bg": { "role": "neutral", "displayName": "Cabinet Surface", "canonical": "#f7f7f7" },
+      "white": { "role": "neutral", "displayName": "White", "canonical": "#ffffff" },
+      "success": { "role": "tertiary", "displayName": "Success", "canonical": "#16803c" }
     },
     "typographyMeta": {
       "display": { "displayName": "Display", "purpose": "Hero H1 only." },
-      "headline": { "displayName": "Headline", "purpose": "Section titles." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles; prefer text-wrap: balance." },
       "title": { "displayName": "Title", "purpose": "Role and feature-block titles." },
-      "body": { "displayName": "Body", "purpose": "Leads and paragraphs." },
+      "body": { "displayName": "Body", "purpose": "Leads and paragraphs; local Manrope woff2." },
       "label": { "displayName": "Label", "purpose": "Cabinet helpers and meta." }
     },
     "shadows": [
@@ -31,7 +35,8 @@
     ],
     "motion": [
       { "name": "button-state", "value": "0.2s ease", "purpose": "Button transform/background transitions." },
-      { "name": "cabinet-spin", "value": "0.8s linear infinite", "purpose": "Loading busy indicator; disabled under prefers-reduced-motion." }
+      { "name": "cabinet-spin", "value": "0.8s linear infinite", "purpose": "Loading busy indicator; disabled under prefers-reduced-motion." },
+      { "name": "skip-link", "value": "transform 0.2s ease", "purpose": "Skip-link reveal on focus." }
     ],
     "breakpoints": [
       { "name": "lg", "value": "980px" },
@@ -46,7 +51,7 @@
       "refersTo": "button-primary",
       "description": "Telegram handoff CTA on Persuade pages.",
       "html": "<a class=\"btn btn--primary\" href=\"#\">ВІДКРИТИ В TELEGRAM</a>",
-      "css": ".btn.btn--primary { background: #e30613; color: #fff; border-radius: 999px; min-height: 48px; padding: 0.85rem 1.35rem; }"
+      "css": ".btn.btn--primary { background: #e30613; color: #fff; border-radius: 999px; min-height: 48px; padding: 0.85rem 1.35rem; font-family: Syne, system-ui, sans-serif; font-weight: 700; }"
     },
     {
       "name": "Ghost Button",
@@ -54,7 +59,15 @@
       "refersTo": "button-ghost",
       "description": "Secondary actions such as Кабінет.",
       "html": "<a class=\"btn btn--ghost\" href=\"cabinet.html\">КАБІНЕТ</a>",
-      "css": ".btn.btn--ghost { background: transparent; color: #0a0a0a; border: 2px solid #0a0a0a; border-radius: 999px; }"
+      "css": ".btn.btn--ghost { background: transparent; color: #0a0a0a; border: 2px solid #0a0a0a; border-radius: 999px; min-height: 44px; }"
+    },
+    {
+      "name": "Telegram Button",
+      "kind": "button",
+      "refersTo": "button-telegram",
+      "description": "Contacts/help Telegram action.",
+      "html": "<a class=\"btn btn--telegram\" href=\"#\">НАПИСАТИ В TELEGRAM</a>",
+      "css": ".btn.btn--telegram { background: #229ed9; color: #fff; border-radius: 999px; } .btn.btn--telegram:hover { background: #1578a8; }"
     },
     {
       "name": "Feature Card",
@@ -63,16 +76,25 @@
       "description": "Role and contacts grouping surfaces.",
       "html": "<article class=\"feature-card\"><h2>Заголовок</h2><p>Короткий опис.</p></article>",
       "css": ".feature-card { background: #fbf8f5; border: 1px solid rgba(10,10,10,0.08); border-radius: 12px; padding: 1.15rem 1.2rem; }"
+    },
+    {
+      "name": "Nav Toggle",
+      "kind": "button",
+      "refersTo": "nav-toggle",
+      "description": "Mobile menu control at ≤980px when html.js-nav is set.",
+      "html": "<button class=\"nav-toggle\" type=\"button\" aria-expanded=\"false\" aria-controls=\"site-nav\"><span class=\"nav-toggle__label\">Меню</span></button>",
+      "css": ".nav-toggle { min-height: 44px; min-width: 44px; border: 1px solid #0a0a0a; border-radius: 5px; background: transparent; font-family: Syne, system-ui, sans-serif; font-weight: 700; }"
     }
   ],
   "narrative": {
     "northStar": "The Telegram Gym Floor",
-    "overview": "Bright, direct handoff into Telegram. Persuade pages lead with brand red and one CTA; Operate pages keep the palette but drop marketing density.",
+    "overview": "Bright, direct handoff into Telegram. Persuade pages lead with brand red and one CTA; Operate pages keep the palette but drop marketing density. Fonts are self-hosted (Manrope/Syne woff2).",
     "keyCharacteristics": [
       "Brand-first first viewport",
       "Red as signal; ink for body",
       "Full-bleed homepage hero",
-      "Pill buttons; quiet operate shell"
+      "Pill buttons; quiet operate shell",
+      "Local fonts; compact mobile nav"
     ],
     "rules": [
       { "name": "The Fill vs Ink Rule", "body": "Use brand red for fills; red-ink for text/links on light backgrounds.", "section": "colors" },
@@ -83,12 +105,14 @@
     "dos": [
       "Do lead Persuade pages with MAYAG Fit and one Telegram CTA.",
       "Do keep Operate pages quieter and denser.",
-      "Do prefer colon/period over em-dash in body copy."
+      "Do prefer colon/period over em-dash in body copy.",
+      "Do self-host fonts from fonts/mayag-fonts.css."
     ],
     "donts": [
       "Don't invent a second accent palette or dark-mode-first marketing look.",
       "Don't put badges or stats strips on hero media.",
-      "Don't recreate the full training product on the website."
+      "Don't recreate the full training product on the website.",
+      "Don't load fonts from fonts.googleapis.com."
     ]
   }
 }

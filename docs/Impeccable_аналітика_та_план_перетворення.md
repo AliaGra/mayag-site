@@ -127,6 +127,7 @@
 | 2026-11-10 | Аудит повторний | 15/20 Good; план A/B/C |
 | 2026-11-10 | Етап A (P1) | mobile nav toggle; assets; skip-link |
 | 2026-11-10 | Етап B (P2) | local fonts; tokens; 44px; trust/labels; PRODUCT uk |
+| 2026-11-10 | Етап C (P3) | about balance; design.json; detect 0; ~17/20 |
 
 ---
 
@@ -165,9 +166,12 @@
 - [x] M2 — dual routing залишено свідомо (header + role picker); labels узгоджені
 
 #### Етап C — P3 (polish)
-- [ ] TYPE1 — unbalanced about heading
-- [ ] DOC1 — оновити `.impeccable/design.json` sidecar під `DESIGN.md`
-- [ ] фінальний `/impeccable polish` + повторний audit
+**Закрито 2026-11-10.**
+- [x] TYPE1 — about title скорочено + `text-wrap: balance`; прибрано inline style
+- [x] DOC1 — оновлено `.impeccable/design.json` під актуальний `DESIGN.md` (токени A/B, local fonts, nav-toggle)
+- [x] polish — `::selection` / `caret-color`; cache `?v=20261110-c`
+- [x] повторний detect: static **0**, live URL **0** (`detect-site-stage-c.json`, `detect-url-stage-c.json`)
+- Орієнтовний audit після A–C: **~17/20 Good** (було 15/20): perf/theming/responsive підняті; a11y лишається strong-good без AAA claim
 
 ### Наступна дія
-**Етап C** — P3.
+План A–C закрито. Далі — лише за новим запитом (Live Apply, ru-контент, тощо).

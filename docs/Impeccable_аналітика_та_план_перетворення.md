@@ -128,6 +128,8 @@
 | 2026-11-10 | Етап A (P1) | mobile nav toggle; assets; skip-link |
 | 2026-11-10 | Етап B (P2) | local fonts; tokens; 44px; trust/labels; PRODUCT uk |
 | 2026-11-10 | Етап C (P3) | about balance; design.json; detect 0; ~17/20 |
+| 2026-11-10 | Аудит після A–C | **18/20** Excellent; detect 0 |
+| 2026-11-10 | Постаудитний пакет | og/hero/typeset/distill/polish |
 
 ---
 
@@ -173,5 +175,12 @@
 - [x] повторний detect: static **0**, live URL **0** (`detect-site-stage-c.json`, `detect-url-stage-c.json`)
 - Орієнтовний audit після A–C: **~17/20 Good** (було 15/20): perf/theming/responsive підняті; a11y лишається strong-good без AAA claim
 
+### Постаудитний пакет (2026-11-10)
+Після аудиту 18/20 виконано разом:
+- [x] optimize — `og-image.jpg`, стиснутий `logo-mayag-light.png`, hero `srcset` (800/1280)
+- [x] typeset — display stack `Syne, Manrope, system-ui` для кирилиці
+- [x] distill — прибрано дубль `page-audience-nav` на role pages (лишився homepage audience picker)
+- [x] polish — cache `?v=20261110-d`; прибрано dead CSS
+
 ### Наступна дія
-План A–C закрито. Далі — лише за новим запитом (Live Apply, ru-контент, тощо).
+Беклог A–C і постаудитний пакет закриті. Далі — лише за новим запитом.

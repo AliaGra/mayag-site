@@ -137,10 +137,10 @@ Signal red on light concrete gray, with a warmer paper tone for feature blocks. 
 
 ## Typography
 
-**Display Font:** Syne (system-ui fallback)  
+**Display Font:** Syne → Manrope → system-ui  
 **Body Font:** Manrope (system-ui fallback)
 
-**Character:** Athletic and geometric display paired with a readable, slightly rounded body — confident without shouting.
+**Character:** Athletic and geometric display paired with a readable, slightly rounded body — confident without shouting. Syne has no Cyrillic; Manrope fills Ukrainian display glyphs before the system face.
 
 ### Hierarchy
 - **Display** (800, `clamp(2.35rem, 7vw, 4.25rem)`, ~1.05): Hero H1.

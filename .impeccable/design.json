@@ -21,7 +21,7 @@
       "success": { "role": "tertiary", "displayName": "Success", "canonical": "#16803c" }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Hero H1 only." },
+      "display": { "displayName": "Display", "purpose": "Hero/section titles. Stack: Syne, Manrope (Cyrillic), system-ui." },
       "headline": { "displayName": "Headline", "purpose": "Section titles; prefer text-wrap: balance." },
       "title": { "displayName": "Title", "purpose": "Role and feature-block titles." },
       "body": { "displayName": "Body", "purpose": "Leads and paragraphs; local Manrope woff2." },

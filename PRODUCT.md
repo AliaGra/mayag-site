@@ -46,7 +46,7 @@ MAYAG Fit brings all fitness participants into one system where it is easier for
 - **Color and tone:** keep the existing brand color and voice already on the site; do not invent a new palette or personality unless explicitly redesigning.
 - **Message:** «не додаток — Telegram» / not an app — Telegram.
 - **Languages:** Ukrainian (`uk`) on the live site; Russian (`ru`) deferred until copy is ready.
-- **Assets:** logo and favicon under `assets/` (e.g. `assets/logo-mayag.png`, `assets/favicon.png`, `assets/og-image.png`).
+- **Assets:** logo and favicon under `assets/` (e.g. `assets/logo-mayag.png`, `assets/favicon.png`, `assets/og-image.jpg`).
 
 ## Evidence on Hand
 

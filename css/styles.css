@@ -28,7 +28,8 @@
   --content: 1080px;
   --narrow: 680px;
   --header-h: 84px;
-  --font-display: "Syne", system-ui, sans-serif;
+  /* Syne has no Cyrillic; Manrope covers UK glyphs before system fallback */
+  --font-display: "Syne", "Manrope", system-ui, sans-serif;
   --font-body: "Manrope", system-ui, sans-serif;
   --focus: 0 0 0 3px rgba(193, 5, 18, 0.35);
   caret-color: var(--red-ink);
@@ -681,34 +682,6 @@ ul {
 .breadcrumbs__current {
   font-weight: 700;
   color: var(--text);
-}
-
-.page-audience-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem 0.55rem;
-  margin-bottom: 0.5rem;
-}
-
-.page-audience-nav a {
-  padding: 0.4rem 0.75rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-pill);
-  font-size: 0.86rem;
-  font-weight: 600;
-  color: var(--muted);
-  background: var(--bg-alt);
-}
-
-.page-audience-nav a:hover {
-  border-color: var(--red);
-  color: var(--text);
-}
-
-.page-audience-nav a.is-active {
-  border-color: var(--red);
-  color: var(--red-ink);
-  background: rgba(227, 6, 19, 0.06);
 }
 
 /* Feature blocks */

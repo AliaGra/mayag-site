@@ -117,7 +117,7 @@ export async function onRequestGet({ request, env }) {
         : profile.code === 'BLOCKED'
           ? 'Доступ до платформи призупинено.'
           : profile.code === 'USER_NOT_FOUND'
-            ? 'Профіль MAYAG ще не знайдено.'
+            ? 'Профіль MAYAG Fit ще не знайдено.'
             : ''
     });
   } catch (error) {

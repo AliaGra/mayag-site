@@ -146,7 +146,7 @@ export async function onRequestPost({ request, env }) {
     if (result.code === 'USER_NOT_FOUND') {
       return json(request, {
         code: result.code,
-        message: 'Профіль MAYAG ще не знайдено. Спочатку відкрий бота й заверши реєстрацію.'
+        message: 'Профіль MAYAG Fit ще не знайдено. Спочатку відкрий бота й заверши реєстрацію.'
       }, 404);
     }
     if (result.code === 'ROLE_NOT_AVAILABLE') {

@@ -1,13 +1,13 @@
-# MAYAG — сайт mayag.fit
+# MAYAG Fit — сайт mayag.fit
 
-Статична візитка платформи MAYAG. Основні дії залишаються в Telegram-боті; сайт також має MVP-вітрину тренера з входом через Telegram.
+Статична візитка платформи MAYAG Fit. Основні дії залишаються в Telegram-боті; сайт також має MVP-вітрину тренера з входом через Telegram.
 
 ## Як оновлювати сайт (постійний процес)
 
 1. Змінюєте файли в цій папці (`index.html`, `css/`, тексти тощо).
 2. Коміт і пуш у GitHub:
    ```powershell
-   cd "D:\MAYAG SITE"
+   cd "D:\MAYAG Fit SITE"
    git add .
    git commit -m "опис змін"
    git push
@@ -32,7 +32,7 @@
 
 У Cloudflare Pages → Settings → Variables потрібно додати:
 
-- `BOT_TOKEN` — токен основного MAYAG-бота
+- `BOT_TOKEN` — токен основного MAYAG Fit-бота
 - `SUPABASE_URL`
 - `SUPABASE_SERVICE_ROLE_KEY` — тільки як серверний secret, не в коді сайту
 
@@ -56,7 +56,7 @@ _headers
 ## Локальний перегляд
 
 ```powershell
-cd "D:\MAYAG SITE"
+cd "D:\MAYAG Fit SITE"
 npx --yes serve .
 ```
 
@@ -66,7 +66,7 @@ npx --yes serve .
 
 1. Репозиторій на GitHub з цією папкою.
 2. dash.cloudflare.com → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**.
-3. Обрати репозиторій MAYAG.
+3. Обрати репозиторій MAYAG Fit.
 4. Налаштування:
    - Framework preset: **None**
    - Build command: *(порожньо)*

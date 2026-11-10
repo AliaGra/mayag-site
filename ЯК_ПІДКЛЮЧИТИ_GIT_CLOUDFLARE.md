@@ -1,4 +1,4 @@
-# Підключення MAYAG через Git (один раз, далі лише дописуємо)
+# Підключення MAYAG Fit через Git (один раз, далі лише дописуємо)
 
 Мета: сайт живе в GitHub → Cloudflare сам оновлює після кожного `git push`.
 Upload ZIP більше не потрібен.
@@ -26,7 +26,7 @@ Upload ZIP більше не потрібен.
 Відкрийте PowerShell:
 
 ```powershell
-cd "D:\MAYAG SITE"
+cd "D:\MAYAG Fit SITE"
 git remote add origin https://github.com/ВАШ_ЛОГІН/mayag-site.git
 git branch -M main
 git push -u origin main
@@ -67,7 +67,7 @@ git push -u origin main
 ## Частина C. Як далі лише дописувати (завжди так)
 
 ```powershell
-cd "D:\MAYAG SITE"
+cd "D:\MAYAG Fit SITE"
 # ...редагуєте сайт...
 git add .
 git commit -m "коротко: що змінили"

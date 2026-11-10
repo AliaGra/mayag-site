@@ -59,7 +59,7 @@
       '<h3>Де тренує</h3>' + venueHtml +
       (profile.documentsCount ? '<p class="cabinet-documents">📄 Документи про освіту: ' + escapeHtml(profile.documentsCount) + ' шт.</p>' : '') +
       '<div class="cabinet-public-card__actions">' + contactButton +
-        '<a class="btn btn--primary" data-telegram href="' + escapeHtml(cfg.telegramUrl || 'https://t.me/MAYAG_fit_Platform_bot') + '">ВІДКРИТИ MAYAG У TELEGRAM</a>' +
+        '<a class="btn btn--primary" data-telegram href="' + escapeHtml(cfg.telegramUrl || 'https://t.me/MAYAG_fit_Platform_bot') + '">ВІДКРИТИ MAYAG Fit У TELEGRAM</a>' +
       '</div>';
     byId('coach-card').querySelectorAll('[data-telegram]').forEach(function (link) {
       link.setAttribute('target', '_blank');

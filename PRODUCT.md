@@ -19,7 +19,7 @@ Secondary audiences present on the site (landing paths exist): people who train 
 
 MAYAG Fit is a fitness platform that runs in Telegram (not a separate installable app). The website is the public face and entry point: explain the product, route people by role, and send them into the Telegram bot (and coach cabinet where relevant) so they can begin work.
 
-Success for a site visit: the visitor understands what MAYAG is, chooses their path if needed, and opens Telegram to start.
+Success for a site visit: the visitor understands what MAYAG Fit is, chooses their path if needed, and opens Telegram to start.
 
 ## Positioning
 
@@ -41,7 +41,7 @@ MAYAG Fit brings all fitness participants into one system where it is easier for
 
 ## Brand Commitments
 
-- **Name:** MAYAG / MAYAG Fit (domain mayag.fit).
+- **Name:** MAYAG Fit / MAYAG Fit (domain mayag.fit).
 - **Slogan:** «РУХАЙСЯ • ДОСЯГАЙ • ЗРОСТАЙ».
 - **Color and tone:** keep the existing brand color and voice already on the site; do not invent a new palette or personality unless explicitly redesigning.
 - **Message:** «не додаток — Telegram» / not an app — Telegram.

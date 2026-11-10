@@ -101,10 +101,10 @@
 
     byId('cabinet-view').innerHTML =
       '<div class="cabinet-welcome cabinet-card">' +
-        '<div><p class="eyebrow">MAYAG · ВІТРИНА ТРЕНЕРА</p>' +
+        '<div><p class="eyebrow">MAYAG Fit · ВІТРИНА ТРЕНЕРА</p>' +
         '<h2>Привіт, ' + escapeHtml(profile.firstName || 'тренере') + '!</h2>' +
-        '<p>Це твоя публічна картка — так її бачать клієнти та користувачі MAYAG.</p></div>' +
-        '<a class="btn btn--primary" data-telegram href="' + escapeHtml(cfg.telegramUrl || 'https://t.me/MAYAG_fit_Platform_bot') + '">ВІДКРИТИ MAYAG У TELEGRAM</a>' +
+        '<p>Це твоя публічна картка — так її бачать клієнти та користувачі MAYAG Fit.</p></div>' +
+        '<a class="btn btn--primary" data-telegram href="' + escapeHtml(cfg.telegramUrl || 'https://t.me/MAYAG_fit_Platform_bot') + '">ВІДКРИТИ MAYAG Fit У TELEGRAM</a>' +
       '</div>' +
       '<section class="cabinet-grid" aria-label="Вітрина тренера">' +
         '<article class="cabinet-card cabinet-preview">' +

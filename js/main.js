@@ -8,26 +8,48 @@
   var emailDisplay = cfg.emailDisplay || 'help@mayag.fit';
   var cabinetUrl = cfg.cabinetUrl || 'cabinet.html';
 
-  function addCabinetLinks() {
+  function ensureHeaderActions() {
     var currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    var onCabinet = currentPath === 'cabinet.html' || currentPath === 'cabinet';
+
     document.querySelectorAll('.site-header .header-actions').forEach(function (actions) {
-      var telegramButton = actions.querySelector('[data-telegram]');
-      if (telegramButton) telegramButton.remove();
-      if (actions.querySelector('[data-cabinet-link]')) return;
-      var link = document.createElement('a');
-      link.className = 'btn btn--primary';
-      link.href = cabinetUrl;
-      link.textContent = 'КАБІНЕТ';
-      link.setAttribute('data-cabinet-link', '');
-      if (currentPath === 'cabinet.html' || currentPath === 'cabinet') {
-        link.classList.add('is-active');
-        link.setAttribute('aria-current', 'page');
+      var cabinet = actions.querySelector('[data-cabinet-link]');
+      var telegram = actions.querySelector('a[data-telegram]');
+
+      if (!telegram) {
+        telegram = document.createElement('a');
+        telegram.setAttribute('data-telegram', '');
+        telegram.textContent = 'В TELEGRAM';
+        if (cabinet) actions.insertBefore(telegram, cabinet);
+        else actions.appendChild(telegram);
       }
-      actions.appendChild(link);
+
+      telegram.className = 'btn btn--primary';
+      telegram.href = telegramUrl;
+      telegram.setAttribute('target', '_blank');
+      telegram.setAttribute('rel', 'noopener noreferrer');
+
+      if (!cabinet) {
+        cabinet = document.createElement('a');
+        cabinet.setAttribute('data-cabinet-link', '');
+        cabinet.textContent = 'КАБІНЕТ';
+        cabinet.href = cabinetUrl;
+        actions.appendChild(cabinet);
+      }
+
+      cabinet.className = 'btn btn--ghost';
+      cabinet.href = cabinetUrl;
+      if (onCabinet) {
+        cabinet.classList.add('is-active');
+        cabinet.setAttribute('aria-current', 'page');
+      } else {
+        cabinet.classList.remove('is-active');
+        cabinet.removeAttribute('aria-current');
+      }
     });
   }
 
-  addCabinetLinks();
+  ensureHeaderActions();
 
   document.querySelectorAll('[data-telegram]').forEach(function (el) {
     el.setAttribute('href', telegramUrl);

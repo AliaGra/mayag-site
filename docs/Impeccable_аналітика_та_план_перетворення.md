@@ -124,6 +124,8 @@
 | 2026-11-10 | Етап 3 (role pages CTA/hierarchy) | intro CTA + unified header; em-dash cleanup |
 | 2026-11-10 | Етап 4 (cabinet/coach operate) | app chrome; denser cards; no marketing nav/eyebrow |
 | 2026-11-10 | Етап 5 (harden/polish/document) | detect 0; critique 25/36; DESIGN.md shipped |
+| 2026-11-10 | Аудит повторний | 15/20 Good; план A/B/C |
+| 2026-11-10 | Етап A (P1) | mobile nav toggle; assets; skip-link |
 
 ---
 
@@ -140,13 +142,29 @@
 - Detect (усі ключові сторінки): **0** (`detect-site-e5-final.json`).
 - Critique homepage (Assessment A+B, dual subagents): **25/36** (H9 n/a). Baseline був 23 → пік після Stage 2 був 31; фінальний незалежний прогін строгіший на consistency/minimalism/mobile header.
 
-### Беклог після перетворення (не блокує закриття етапів)
-| ID | Pri | Тема |
-|----|-----|------|
-| M1 | P1 | Мобільний header: щільність chips + dual CTA (~223px) |
-| T2 | P1 | Блок «фінальне тестування» як trust valley |
-| L1 | P1 | Узгодити labels ролей (nav vs audience: Тренуйся з / Займайся з; Для тренерів / Працюй тренером) |
-| M2 | P2 | Подвійний role routing (header + audience grid) |
+### Беклог після перетворення → план етапів A–C (аудит 2026-11-10, 15/20)
+
+Джерело: повторний `/impeccable audit` після Stage 5.
+
+#### Етап A — P1 (мобільний chrome + вага + a11y bypass)
+**Закрито 2026-11-10.**
+- [x] M1 — компактний мобільний header: `.nav-toggle` + згортання `.site-nav` @≤980px (JS progressive)
+- [x] OPT1 — стиснуто logo/favicon/hero/brand light (favicon ~3KB, hero ~81KB, logo ~52KB)
+- [x] A11Y1 — skip-link «До змісту» на всіх сторінках
+
+#### Етап B — P2 (perf / tokens / product gaps)
+- [ ] OPT2 — Google Fonts: self-host або зменшити block на first paint
+- [ ] TCH1 — header CTA touch targets ≥44px
+- [ ] TOK1 — hard-coded кольори → CSS tokens (`#229ED9`, `#b0b0b0`, `#16803c`…)
+- [ ] CACHE1 — єдиний cache-bust `?v=` для CSS/JS
+- [ ] I18N1 — uk/ru: додати ru **або** звузити PRODUCT до uk
+- [ ] T2 / L1 / M2 — trust copy «фінальне тестування»; узгодити labels ролей; подвійний role routing (за потреби в тому ж етапі)
+
+#### Етап C — P3 (polish)
+- [ ] TYPE1 — unbalanced about heading
+- [ ] TOK2 — breadcrumbs sep → `var(--muted)`
+- [ ] DOC1 — оновити `.impeccable/design.json` sidecar під `DESIGN.md`
+- [ ] фінальний `/impeccable polish` + повторний audit
 
 ### Наступна дія
-За запитом: закривати M1/T2/L1, або Live Apply експерименти — лише після окремого рішення.
+**Етап B** — P2.

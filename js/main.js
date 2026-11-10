@@ -51,6 +51,43 @@
 
   ensureHeaderActions();
 
+  function setupNavToggle() {
+    document.documentElement.classList.add('js-nav');
+
+    document.querySelectorAll('.site-header').forEach(function (header) {
+      var toggle = header.querySelector('.nav-toggle');
+      var nav = header.querySelector('#site-nav, .site-nav');
+      if (!toggle || !nav) return;
+
+      function setOpen(open) {
+        header.classList.toggle('is-nav-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        var label = toggle.querySelector('.nav-toggle__label');
+        if (label) label.textContent = open ? 'Закрити' : 'Меню';
+      }
+
+      toggle.addEventListener('click', function () {
+        setOpen(!header.classList.contains('is-nav-open'));
+      });
+
+      nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          setOpen(false);
+        });
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') setOpen(false);
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.matchMedia('(min-width: 981px)').matches) setOpen(false);
+      });
+    });
+  }
+
+  setupNavToggle();
+
   document.querySelectorAll('[data-telegram]').forEach(function (el) {
     el.setAttribute('href', telegramUrl);
     el.setAttribute('target', '_blank');

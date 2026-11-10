@@ -21,15 +21,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20261110-brand">
+  <link rel="stylesheet" href="css/styles.css?v=20261110-a">
 </head>
 <body>
+  <a class="skip-link" href="#top">До змісту</a>
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand" href="index.html" aria-label="MAYAG Fit — на головну">
         <img class="brand__logo" src="assets/logo-mayag.png" width="120" height="96" alt="MAYAG Fit">
       </a>
-      <nav class="site-nav" aria-label="Основна навігація">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+        <span class="nav-toggle__label">Меню</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Основна навігація">
         <a href="solo.html">Тренуйся сам</a>
         <a href="with-coach.html">Тренуйся з тренером</a>
         <a href="coaches.html">Для тренерів</a>
@@ -44,7 +49,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="top">
     <div class="page-top">
       <div class="container">
         <nav class="breadcrumbs" aria-label="Навігаційний шлях">
@@ -138,6 +143,6 @@
   </footer>
 
   <script src="js/config.js"></script>
-  <script src="js/main.js?v=20261110-brand"></script>
+  <script src="js/main.js?v=20261110-a"></script>
 </body>
 </html>

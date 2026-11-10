@@ -130,6 +130,9 @@
 | 2026-11-10 | Етап C (P3) | about balance; design.json; detect 0; ~17/20 |
 | 2026-11-10 | Аудит після A–C | **18/20** Excellent; detect 0 |
 | 2026-11-10 | Постаудитний пакет | og/hero/typeset/distill/polish |
+| 2026-11-10 | Аудит після пакету | **19/20** Excellent |
+| 2026-11-10 | P3-пакет | logo ~12KB; homepage audience removed |
+| 2026-11-10 | Аудит після P3 | **19–20/20** Excellent; detect 0; dual-path closed |
 
 ---
 
@@ -182,5 +185,10 @@
 - [x] distill — прибрано дубль `page-audience-nav` на role pages (лишився homepage audience picker)
 - [x] polish — cache `?v=20261110-d`; прибрано dead CSS
 
+### P3-пакет після аудиту 19/20 (2026-11-10)
+- [x] optimize — header `logo-mayag.png` ~12KB (було ~52KB)
+- [x] distill — прибрано homepage `.audience-nav` (ролі лишаються в header/footer)
+- [x] polish — dead CSS audience-nav; cache `?v=20261110-e`
+
 ### Наступна дія
-Беклог A–C і постаудитний пакет закриті. Далі — лише за новим запитом.
+Усі audit-пакети закриті. Далі — лише за новим запитом.

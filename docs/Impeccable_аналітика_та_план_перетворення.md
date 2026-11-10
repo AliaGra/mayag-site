@@ -126,6 +126,7 @@
 | 2026-11-10 | Етап 5 (harden/polish/document) | detect 0; critique 25/36; DESIGN.md shipped |
 | 2026-11-10 | Аудит повторний | 15/20 Good; план A/B/C |
 | 2026-11-10 | Етап A (P1) | mobile nav toggle; assets; skip-link |
+| 2026-11-10 | Етап B (P2) | local fonts; tokens; 44px; trust/labels; PRODUCT uk |
 
 ---
 
@@ -153,18 +154,20 @@
 - [x] A11Y1 — skip-link «До змісту» на всіх сторінках
 
 #### Етап B — P2 (perf / tokens / product gaps)
-- [ ] OPT2 — Google Fonts: self-host або зменшити block на first paint
-- [ ] TCH1 — header CTA touch targets ≥44px
-- [ ] TOK1 — hard-coded кольори → CSS tokens (`#229ED9`, `#b0b0b0`, `#16803c`…)
-- [ ] CACHE1 — єдиний cache-bust `?v=` для CSS/JS
-- [ ] I18N1 — uk/ru: додати ru **або** звузити PRODUCT до uk
-- [ ] T2 / L1 / M2 — trust copy «фінальне тестування»; узгодити labels ролей; подвійний role routing (за потреби в тому ж етапі)
+**Закрито 2026-11-10.**
+- [x] OPT2 — self-host Manrope/Syne у `fonts/` (`mayag-fonts.css`), без Google Fonts stylesheet
+- [x] TCH1 — `.header-actions .btn` min-height **44px** (desktop + mobile)
+- [x] TOK1 — `--telegram`, `--telegram-hover`, `--ink-hover`, `--cabinet-bg`, `--success`; breadcrumbs → `var(--muted)`
+- [x] CACHE1 — єдиний `?v=20261110-b` для CSS/JS/fonts
+- [x] I18N1 — PRODUCT звужено до live `uk`; `ru` deferred
+- [x] T2 — trust copy без «фінальне тестування»
+- [x] L1 — audience labels = nav («Тренуйся з тренером», «Для тренерів», «Для клубів…»)
+- [x] M2 — dual routing залишено свідомо (header + role picker); labels узгоджені
 
 #### Етап C — P3 (polish)
 - [ ] TYPE1 — unbalanced about heading
-- [ ] TOK2 — breadcrumbs sep → `var(--muted)`
 - [ ] DOC1 — оновити `.impeccable/design.json` sidecar під `DESIGN.md`
 - [ ] фінальний `/impeccable polish` + повторний audit
 
 ### Наступна дія
-**Етап B** — P2.
+**Етап C** — P3.

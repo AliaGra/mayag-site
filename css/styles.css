@@ -11,6 +11,11 @@
   --text: #141414;
   --muted: #5c5c5c;
   --muted-soft: #9a9a9a;
+  --telegram: #229ed9;
+  --telegram-hover: #1578a8;
+  --ink-hover: #222222;
+  --cabinet-bg: #f7f7f7;
+  --success: #16803c;
   --line: rgba(10, 10, 10, 0.1);
   --shadow: 0 12px 40px rgba(10, 10, 10, 0.08);
   --radius: 18px;
@@ -288,7 +293,7 @@ ul {
   font-size: 0.78rem;
   letter-spacing: 0.03em;
   white-space: nowrap;
-  min-height: 42px;
+  min-height: 44px;
 }
 
 .header-actions .btn--ghost.is-active {
@@ -340,13 +345,13 @@ ul {
 }
 
 .btn--telegram {
-  background: #229ED9;
+  background: var(--telegram);
   color: var(--white);
 }
 
 .btn--telegram:hover {
-  /* Keep ≥4.5:1 white-on-blue (was #1b8bc0 ≈ 3.8:1) */
-  background: #1578a8;
+  /* Keep ≥4.5:1 white-on-blue */
+  background: var(--telegram-hover);
 }
 
 .btn--dark {
@@ -355,7 +360,7 @@ ul {
 }
 
 .btn--dark:hover {
-  background: #222;
+  background: var(--ink-hover);
 }
 
 .btn--ghost {
@@ -402,7 +407,7 @@ ul {
   align-items: flex-end;
   padding: 1.25rem 0 0;
   overflow: hidden;
-  background: #0a0a0a;
+  background: var(--black);
   color: var(--white);
 }
 
@@ -658,7 +663,7 @@ ul {
 }
 
 .breadcrumbs__sep {
-  color: #b0b0b0;
+  color: var(--muted);
 }
 
 .breadcrumbs__current {
@@ -752,7 +757,7 @@ ul {
 
 /* Operate shell: cabinet / public coach card */
 .cabinet-page {
-  background-color: #f7f7f7;
+  background-color: var(--cabinet-bg);
   background-image: none;
 }
 
@@ -1017,7 +1022,7 @@ ul {
 }
 
 .cabinet-checklist li.is-complete > span:first-child {
-  color: #16803c;
+  color: var(--success);
 }
 
 .cabinet-checklist strong {
@@ -1712,7 +1717,7 @@ ul {
   .header-actions .btn {
     padding: 0.55rem 0.75rem;
     font-size: 0.72rem;
-    min-height: 40px;
+    min-height: 44px;
   }
 
   .btn {

@@ -13,8 +13,11 @@ colors:
   surface-warm: "#fbf8f5"
   white: "#ffffff"
   line: "rgba(10, 10, 10, 0.1)"
-  telegram: "#229ED9"
+  telegram: "#229ed9"
   telegram-hover: "#1578a8"
+  ink-hover: "#222222"
+  cabinet-bg: "#f7f7f7"
+  success: "#16803c"
 typography:
   display:
     fontFamily: "Syne, system-ui, sans-serif"
@@ -112,7 +115,10 @@ Signal red on light concrete gray, with a warmer paper tone for feature blocks. 
 - **Signal Red Ink** (`#c10512`): Text and links on light surfaces when red must meet ≥4.5:1 contrast.
 
 ### Secondary
-- **Telegram Blue** (`#229ED9`): Contacts / Telegram help actions only. Hover `#1578a8` to keep white text ≥4.5:1.
+- **Telegram Blue** (`#229ed9` / `--telegram`): Contacts / Telegram help actions only. Hover `#1578a8` (`--telegram-hover`) to keep white text ≥4.5:1.
+- **Ink Hover** (`#222222` / `--ink-hover`): Dark button hover.
+- **Cabinet Surface** (`#f7f7f7` / `--cabinet-bg`): Operate page wash.
+- **Success** (`#16803c` / `--success`): Readiness “complete” state.
 
 ### Neutral
 - **Ink** (`#0a0a0a`): Brand black, dark buttons, strong headings when not red.

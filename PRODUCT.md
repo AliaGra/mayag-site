@@ -30,7 +30,7 @@ MAYAG Fit brings all fitness participants into one system where it is easier for
 - Public site: https://mayag.fit (static pages + Cloudflare Pages Functions for coach cabinet / public coach card).
 - Primary product surface: Telegram bot (`js/config.js` → `telegramUrl`).
 - Coach cabinet on the site: Telegram Login Widget + read-only API (`cabinet.html`, `functions/api/…`).
-- Content and UI languages to support: Ukrainian and Russian (uk/ru).
+- Content and UI language on the public site: Ukrainian (`uk`). Russian (`ru`) is a planned expansion, not shipped on mayag.fit yet.
 
 ## Capabilities and Constraints
 
@@ -45,7 +45,7 @@ MAYAG Fit brings all fitness participants into one system where it is easier for
 - **Slogan:** «РУХАЙСЯ • ДОСЯГАЙ • ЗРОСТАЙ».
 - **Color and tone:** keep the existing brand color and voice already on the site; do not invent a new palette or personality unless explicitly redesigning.
 - **Message:** «не додаток — Telegram» / not an app — Telegram.
-- **Languages:** uk/ru.
+- **Languages:** Ukrainian (`uk`) on the live site; Russian (`ru`) deferred until copy is ready.
 - **Assets:** logo and favicon under `assets/` (e.g. `assets/logo-mayag.png`, `assets/favicon.png`, `assets/og-image.png`).
 
 ## Evidence on Hand
@@ -61,7 +61,7 @@ MAYAG Fit brings all fitness participants into one system where it is easier for
 2. **One system for every role** — speak to coaches, solo users, clients, and venues as parts of one fitness ecosystem.
 3. **No install friction** — always reinforce that Telegram is enough; avoid sounding like a native app download funnel.
 4. **Preserve brand identity** — name, color, tone, and slogan stay consistent across pages.
-5. **Bilingual clarity** — uk/ru audiences must remain first-class; do not drop or invent language coverage casually.
+5. **Language honesty** — ship Ukrainian as the live site language; do not invent a Russian UI until real copy is provided.
 
 ## Accessibility & Inclusion
 

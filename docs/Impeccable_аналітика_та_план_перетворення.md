@@ -66,7 +66,7 @@
 - [x] `PRODUCT.md`
 - [x] Impeccable install (без Live Apply)
 - [x] Baseline аналітика + detector snapshots
-- [ ] `/impeccable document` → `DESIGN.md` (зафіксувати поточну систему **перед** великим візуальним стрибком *або* після затвердження нового напряму — вирішити на старті Етапу 2)
+- [x] `/impeccable document` → `DESIGN.md` (фінальна система після Етапу 5, 2026-11-10)
 
 ### Етап 1 — Швидкі якісні виправлення (без зміни бренду)
 Фокус: читабельність і ясність дії, зберегти колір/тон. **Закрито 2026-11-10.**
@@ -97,10 +97,11 @@
 - [x] `cabinet.js` welcome/cards без marketing kicker
 
 ### Етап 5 — Фінішна якість
-- [ ] `/impeccable harden` (стани помилок кабінету, overflow, i18n-готовність)
-- [ ] `/impeccable polish` по всьому маркетинговому шару
-- [ ] Оновити `DESIGN.md` (`/impeccable document`) як фінальну систему
-- [ ] Фінальний critique + detect; оновити цей файл секцією «Після перетворення»
+**Закрито 2026-11-10.**
+- [x] `/impeccable harden` — cabinet/coach: timeout/offline errors, wrap/truncate, busy loading, recovery CTAs
+- [x] `/impeccable polish` — CTA label «ВІДКРИТИ В TELEGRAM», em-dash cleanup на index/contacts, telegram hover contrast, radius/color tokens aligned to DESIGN.md
+- [x] `DESIGN.md` + `.impeccable/design.json` (North Star: The Telegram Gym Floor)
+- [x] Фінальний detect site → **0 findings**; critique dual-subagent homepage **25/36** (див. «Після перетворення»)
 
 ---
 
@@ -122,9 +123,30 @@
 | 2026-11-10 | Етап 2 (hero bleed + H1) | 31/36; P0 H1 закрито; комп→код |
 | 2026-11-10 | Етап 3 (role pages CTA/hierarchy) | intro CTA + unified header; em-dash cleanup |
 | 2026-11-10 | Етап 4 (cabinet/coach operate) | app chrome; denser cards; no marketing nav/eyebrow |
+| 2026-11-10 | Етап 5 (harden/polish/document) | detect 0; critique 25/36; DESIGN.md shipped |
 
 ---
 
-## 6. Наступна дія (за замовчуванням)
+## 6. Після перетворення (2026-11-10)
 
-**Етап 5** — фініш: harden кабінету, polish маркетингу, `DESIGN.md` (`/impeccable document`), фінальний critique/detect.
+**Статус плану етапів 0–5:** закрито.
+
+### Що досягнуто
+- Persuade: brand-first hero, єдиний Telegram CTA, role pages з intro CTA, контраст/nav/padding.
+- Operate: окремий chrome для кабінету/публічної картки; hardened error/loading/overflow.
+- Система: `PRODUCT.md` + `DESIGN.md` + sidecar; detector snapshots у `.impeccable/critique/`.
+
+### Фінальний контроль
+- Detect (усі ключові сторінки): **0** (`detect-site-e5-final.json`).
+- Critique homepage (Assessment A+B, dual subagents): **25/36** (H9 n/a). Baseline був 23 → пік після Stage 2 був 31; фінальний незалежний прогін строгіший на consistency/minimalism/mobile header.
+
+### Беклог після перетворення (не блокує закриття етапів)
+| ID | Pri | Тема |
+|----|-----|------|
+| M1 | P1 | Мобільний header: щільність chips + dual CTA (~223px) |
+| T2 | P1 | Блок «фінальне тестування» як trust valley |
+| L1 | P1 | Узгодити labels ролей (nav vs audience: Тренуйся з / Займайся з; Для тренерів / Працюй тренером) |
+| M2 | P2 | Подвійний role routing (header + audience grid) |
+
+### Наступна дія
+За запитом: закривати M1/T2/L1, або Live Apply експерименти — лише після окремого рішення.

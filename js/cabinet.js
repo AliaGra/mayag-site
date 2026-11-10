@@ -52,6 +52,47 @@
     show('cabinet-error', true);
   }
 
+  function friendlyNetworkError(error) {
+    if (!navigator.onLine) {
+      return 'Немає з’єднання з інтернетом. Перевір мережу і спробуй ще раз.';
+    }
+    var message = error && error.message ? String(error.message) : '';
+    if (/Failed to fetch|NetworkError|Load failed|fetch/i.test(message)) {
+      return 'Сервер тимчасово недоступний. Спробуй ще раз за хвилину.';
+    }
+    return message || 'Сталася помилка. Спробуй ще раз.';
+  }
+
+  async function fetchJson(url, options) {
+    var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var timer = null;
+    if (controller) {
+      timer = window.setTimeout(function () {
+        controller.abort();
+      }, 20000);
+    }
+    try {
+      var response = await fetch(url, Object.assign({}, options || {}, controller ? { signal: controller.signal } : {}));
+      var result = null;
+      try {
+        result = await response.json();
+      } catch (_) {
+        result = null;
+      }
+      if (!response.ok) {
+        throw new Error((result && result.message) || ('Помилка сервера (' + response.status + ').'));
+      }
+      return result;
+    } catch (error) {
+      if (error && error.name === 'AbortError') {
+        throw new Error('Час очікування відповіді вичерпано. Спробуй ще раз.');
+      }
+      throw new Error(friendlyNetworkError(error));
+    } finally {
+      if (timer) window.clearTimeout(timer);
+    }
+  }
+
   function renderReadiness(profile) {
     var checks = [
       { label: 'Ім’я в профілі', ok: Boolean((profile.firstName || '').trim()) },
@@ -75,8 +116,8 @@
     }
     return '<ul class="cabinet-venues">' + venues.map(function (venue) {
       var line = [venue.city, venue.address].filter(Boolean).join(', ');
-      return '<li><strong>' + escapeHtml(venue.name || 'Заклад') + '</strong>' +
-        (line ? '<span>' + escapeHtml(line) + '</span>' : '') +
+      return '<li><strong class="cabinet-wrap">' + escapeHtml(venue.name || 'Заклад') + '</strong>' +
+        (line ? '<span class="cabinet-wrap">' + escapeHtml(line) + '</span>' : '') +
         '</li>';
     }).join('') + '</ul>';
   }
@@ -101,13 +142,13 @@
 
     byId('cabinet-view').innerHTML =
       '<div class="cabinet-welcome cabinet-card">' +
-        '<div><h2>Привіт, ' + escapeHtml(profile.firstName || 'тренере') + '!</h2>' +
+        '<div><h2 class="cabinet-truncate">Привіт, ' + escapeHtml(profile.firstName || 'тренере') + '!</h2>' +
         '<p>Так клієнти бачать твою публічну картку в MAYAG Fit.</p></div>' +
         '<a class="btn btn--primary" data-telegram href="' + escapeHtml(cfg.telegramUrl || 'https://t.me/MAYAG_fit_Platform_bot') + '">ВІДКРИТИ В TELEGRAM</a>' +
       '</div>' +
       '<section class="cabinet-grid" aria-label="Вітрина тренера">' +
         '<article class="cabinet-card cabinet-preview">' +
-          '<h2>' + escapeHtml(name) + '</h2>' +
+          '<h2 class="cabinet-wrap">' + escapeHtml(name) + '</h2>' +
           '<p class="cabinet-card__label">Публічна картка</p>' +
           (location ? '<p class="cabinet-preview__line">' + escapeHtml(location) + '</p>' : '') +
           (profile.trainingTypes && profile.trainingTypes.length ? '<p class="cabinet-preview__line">' + escapeHtml(profile.trainingTypes.join(', ')) + '</p>' : '') +
@@ -149,15 +190,11 @@
     }
     setLoginVisible(false);
     try {
-      var response = await fetch(apiUrl + '/api/cabinet/coach', {
+      var result = await fetchJson(apiUrl + '/api/cabinet/coach', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(auth)
       });
-      var result = await response.json();
-      if (!response.ok) {
-        throw new Error(result.message || 'Не вдалося відкрити кабінет.');
-      }
       if (!result.profile) throw new Error('Профіль тренера не отримано.');
       sessionStorage.setItem(loginStorageKey, JSON.stringify(auth));
       renderProfile(result.profile);
@@ -177,11 +214,9 @@
     var loading = document.querySelector('#cabinet-loading .cabinet-status');
     if (loading) loading.textContent = 'Чекаємо підтвердження та завершення профілю в Telegram…';
     try {
-      var response = await fetch(apiUrl + '/api/cabinet/onboarding?token=' + encodeURIComponent(token), {
+      var result = await fetchJson(apiUrl + '/api/cabinet/onboarding?token=' + encodeURIComponent(token), {
         cache: 'no-store'
       });
-      var result = await response.json();
-      if (!response.ok) throw new Error(result.message || 'Запит реєстрації не знайдено.');
       if (result.status === 'completed' && result.profile) {
         sessionStorage.removeItem(onboardingStorageKey);
         renderProfile(result.profile);
@@ -215,13 +250,14 @@
     if (submit) submit.disabled = true;
     setOnboardingStatus('Створюємо одноразове посилання…');
     try {
-      var response = await fetch(apiUrl + '/api/cabinet/onboarding', {
+      var result = await fetchJson(apiUrl + '/api/cabinet/onboarding', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ phone: phone.value.trim() })
       });
-      var result = await response.json();
-      if (!response.ok) throw new Error(result.message || 'Не вдалося створити запит.');
+      if (!result.token || !result.telegramUrl) {
+        throw new Error('Не вдалося створити запит. Спробуй ще раз.');
+      }
       sessionStorage.setItem(onboardingStorageKey, result.token);
       setOnboardingStatus('Відкриваємо Telegram. Надішли контакт і заверши анкету тренера.');
       var opened = window.open(result.telegramUrl, '_blank', 'noopener,noreferrer');

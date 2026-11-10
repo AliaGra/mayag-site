@@ -42,12 +42,15 @@
     <section class="cabinet-content">
       <div class="container container--narrow">
         <div id="coach-card-loading" class="cabinet-card" aria-live="polite">
-          <p class="cabinet-status">Завантажуємо картку тренера…</p>
+          <p class="cabinet-status cabinet-status--busy">Завантажуємо картку тренера…</p>
         </div>
         <div id="coach-card-error" class="cabinet-card cabinet-card--error is-hidden" aria-live="polite">
           <h2>Картку не знайдено</h2>
           <p id="coach-card-error-text">Перевір посилання або відкрий MAYAG Fit у Telegram.</p>
-          <a class="btn btn--primary" data-telegram href="https://t.me/MAYAG_fit_Platform_bot">ВІДКРИТИ MAYAG Fit У TELEGRAM</a>
+          <div class="cabinet-actions">
+            <a class="btn btn--ghost" href="cabinet.html">До кабінету</a>
+            <a class="btn btn--primary" data-telegram href="https://t.me/MAYAG_fit_Platform_bot">ВІДКРИТИ В TELEGRAM</a>
+          </div>
         </div>
         <article id="coach-card" class="cabinet-card cabinet-public-card is-hidden"></article>
       </div>
@@ -66,7 +69,7 @@
     </div>
   </footer>
   <script src="js/config.js"></script>
-  <script src="js/coach-public.js?v=20261110-e4"></script>
-  <script src="js/main.js?v=20261110-e4"></script>
+  <script src="js/coach-public.js?v=20261110-e5"></script>
+  <script src="js/main.js?v=20261110-e5"></script>
 </body>
 </html>

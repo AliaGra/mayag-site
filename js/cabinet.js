@@ -101,32 +101,30 @@
 
     byId('cabinet-view').innerHTML =
       '<div class="cabinet-welcome cabinet-card">' +
-        '<div><p class="eyebrow">MAYAG Fit · ВІТРИНА ТРЕНЕРА</p>' +
-        '<h2>Привіт, ' + escapeHtml(profile.firstName || 'тренере') + '!</h2>' +
-        '<p>Це твоя публічна картка — так її бачать клієнти та користувачі MAYAG Fit.</p></div>' +
-        '<a class="btn btn--primary" data-telegram href="' + escapeHtml(cfg.telegramUrl || 'https://t.me/MAYAG_fit_Platform_bot') + '">ВІДКРИТИ MAYAG Fit У TELEGRAM</a>' +
+        '<div><h2>Привіт, ' + escapeHtml(profile.firstName || 'тренере') + '!</h2>' +
+        '<p>Так клієнти бачать твою публічну картку в MAYAG Fit.</p></div>' +
+        '<a class="btn btn--primary" data-telegram href="' + escapeHtml(cfg.telegramUrl || 'https://t.me/MAYAG_fit_Platform_bot') + '">ВІДКРИТИ В TELEGRAM</a>' +
       '</div>' +
       '<section class="cabinet-grid" aria-label="Вітрина тренера">' +
         '<article class="cabinet-card cabinet-preview">' +
-          '<p class="cabinet-card__label">ПУБЛІЧНА КАРТКА</p>' +
           '<h2>' + escapeHtml(name) + '</h2>' +
-          (location ? '<p class="cabinet-preview__line">⌖ ' + escapeHtml(location) + '</p>' : '') +
-          (profile.trainingTypes && profile.trainingTypes.length ? '<p class="cabinet-preview__line">💪 ' + escapeHtml(profile.trainingTypes.join(', ')) + '</p>' : '') +
+          '<p class="cabinet-card__label">Публічна картка</p>' +
+          (location ? '<p class="cabinet-preview__line">' + escapeHtml(location) + '</p>' : '') +
+          (profile.trainingTypes && profile.trainingTypes.length ? '<p class="cabinet-preview__line">' + escapeHtml(profile.trainingTypes.join(', ')) + '</p>' : '') +
           (links.length ? '<p class="cabinet-links">' + links.join(' · ') + '</p>' : '<p class="cabinet-muted">Instagram та Telegram ще не додані.</p>') +
           '<h3>Де треную</h3>' + renderVenues(profile.venues) +
-          (profile.documentsCount ? '<p class="cabinet-documents">📄 Документи про освіту: ' + escapeHtml(profile.documentsCount) + ' шт.</p>' : '') +
+          (profile.documentsCount ? '<p class="cabinet-documents">Документи про освіту: ' + escapeHtml(profile.documentsCount) + ' шт.</p>' : '') +
           '<div class="cabinet-preview__actions">' + publicLink + '</div>' +
         '</article>' +
         '<article class="cabinet-card">' +
-          '<p class="cabinet-card__label">ГОТОВНІСТЬ ВІТРИНИ</p>' +
-          '<h2>Що побачать клієнти</h2>' +
+          '<h2>Готовність вітрини</h2>' +
+          '<p class="cabinet-card__label">Що побачать клієнти</p>' +
           '<ul class="cabinet-checklist">' + renderReadiness(profile) + '</ul>' +
           '<a class="btn btn--dark btn--block" data-telegram href="' + escapeHtml(cfg.telegramUrl || 'https://t.me/MAYAG_fit_Platform_bot') + '">ВИПРАВИТИ В TELEGRAM</a>' +
         '</article>' +
       '</section>' +
       '<section class="cabinet-next cabinet-card">' +
-        '<p class="cabinet-card__label">РОБОТА</p>' +
-        '<h2>У Telegram — усе необхідне</h2>' +
+        '<h2>Далі в Telegram</h2>' +
         '<div class="cabinet-next__items"><span>Клієнти та інвайти</span><span>Розклад і записи</span><span>Тренування та плани</span><span>Звіти й розсилка</span></div>' +
       '</section>' +
       '<div class="cabinet-logout"><button id="cabinet-logout" class="btn btn--ghost" type="button">ВИЙТИ З КАБІНЕТУ</button></div>';

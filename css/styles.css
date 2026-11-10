@@ -668,36 +668,94 @@ ul {
   display: none !important;
 }
 
-.eyebrow,
 .cabinet-card__label {
-  margin: 0 0 0.65rem;
+  margin: 0.15rem 0 0.75rem;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+/* Operate shell: cabinet / public coach card */
+.cabinet-page {
+  background-color: #f7f7f7;
+  background-image: none;
+}
+
+.cabinet-page .site-header--app {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: inset 0 -1px 0 var(--line);
+}
+
+.cabinet-page .site-header--app .site-nav {
+  display: none;
+}
+
+.app-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.85rem;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.app-nav a {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.app-nav a:hover {
   color: var(--red-ink);
+}
+
+.cabinet-title {
+  margin: 0 0 0.55rem;
   font-family: var(--font-display);
-  font-size: 0.78rem;
+  font-size: clamp(1.55rem, 3.5vw, 2rem);
   font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.cabinet-lead {
+  margin: 0 auto;
+  max-width: 34rem;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.site-footer--app {
+  padding-block: 1.75rem;
+}
+
+.site-footer--app .site-footer__slogan {
+  display: none;
 }
 
 .cabinet-hero {
-  padding: 2.5rem 0 1rem;
+  padding: 1.75rem 0 0.75rem;
 }
 
 .cabinet-hero__head {
-  text-align: center;
+  text-align: left;
 }
 
 .cabinet-content {
-  padding: 1rem 1rem 4rem;
+  padding: 0.75rem 1rem 3.25rem;
 }
 
 .cabinet-card {
-  margin-bottom: 1rem;
-  padding: 1.75rem 1.5rem;
-  background: var(--bg-alt);
+  margin-bottom: 0.85rem;
+  padding: 1.25rem 1.2rem;
+  background: var(--white);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 16px rgba(10, 10, 10, 0.04);
 }
 
 .cabinet-card > * {
@@ -804,11 +862,15 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.25rem;
+  gap: 1rem;
+}
+
+.cabinet-welcome h2 {
+  margin-bottom: 0.35rem;
 }
 
 .cabinet-welcome p {
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .cabinet-preview {
@@ -1554,9 +1616,22 @@ ul {
     padding-top: 1.5rem;
   }
 
+  .cabinet-page .site-header--app .site-header__inner {
+    flex-wrap: wrap;
+  }
+
+  .cabinet-page .app-nav {
+    order: 3;
+    flex: 1 1 100%;
+  }
+
   .cabinet-welcome {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .cabinet-hero__head {
+    text-align: left;
   }
 
   .cabinet-actions,

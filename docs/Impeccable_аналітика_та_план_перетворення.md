@@ -90,8 +90,11 @@
 - [x] Зменшено em-dash у body copy (uk); ru ще немає на сайті
 
 ### Етап 4 — Кабінет / публічна картка
-- [ ] `cabinet.html`, `coach.html` — operate-mode: щільність карток, nav, контраст
-- [ ] Не змішувати маркетинговий Persuade з task UI кабінету
+**Закрито 2026-11-10.**
+- [x] Operate-shell: `site-header--app` / `app-nav` (На сайт, Для тренерів) замість маркетингового nav
+- [x] Компактніший footer без slogan/рольових лінків; світліший фон без marketing pattern
+- [x] Прибрано eyebrow; щільніші картки; labels як helper text; copy без em-dash у hero
+- [x] `cabinet.js` welcome/cards без marketing kicker
 
 ### Етап 5 — Фінішна якість
 - [ ] `/impeccable harden` (стани помилок кабінету, overflow, i18n-готовність)
@@ -118,9 +121,10 @@
 | 2026-11-10 | Етап 1 (H2, N1, C1, P1) | 28/36; P0 лишився H1 (hero); detect index clean крім em-dash |
 | 2026-11-10 | Етап 2 (hero bleed + H1) | 31/36; P0 H1 закрито; комп→код |
 | 2026-11-10 | Етап 3 (role pages CTA/hierarchy) | intro CTA + unified header; em-dash cleanup |
+| 2026-11-10 | Етап 4 (cabinet/coach operate) | app chrome; denser cards; no marketing nav/eyebrow |
 
 ---
 
 ## 6. Наступна дія (за замовчуванням)
 
-**Етап 4** — кабінет / публічна картка (`cabinet.html`, `coach.html`): operate-mode, щільність, без змішування з marketing Persuade.
+**Етап 5** — фініш: harden кабінету, polish маркетингу, `DESIGN.md` (`/impeccable document`), фінальний critique/detect.
